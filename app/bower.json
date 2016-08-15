@@ -1,0 +1,10 @@
+{
+  "name": "makeup-to-ng2",
+  "description": "",
+  "main": [
+    "styles/index.scss"
+  ],
+  "devDependencies": {
+    "gulp": "~3.9.1"
+  }
+}

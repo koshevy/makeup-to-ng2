@@ -35,3 +35,9 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+.idea/copyright/
+.idea/makeup-to-ng2.iml
+.idea/modules.xml
+.idea/workspace.xml
+/app/src/base-framework/
+/app/vendor/
