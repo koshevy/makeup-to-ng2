@@ -1,5 +1,9 @@
 {
 	"directory": "vendor",
+	"color": true,
+	"ignoredDependencies": [
+		"jquery"
+	],
 	"scripts": {
 		"preinstall": "bower --config.cwd=src --config.directory=base-framework install materialize"
 	}
