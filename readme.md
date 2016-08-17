@@ -142,7 +142,18 @@ StartKit для компонентной верстки
 │  │  └─ ./graphic/
 │  │
 │  ├─ ./icons/
-│  └─ ./images/
+│  │  ┬
+│  │  ├─ ./index.html
+│  │  ├─ ./svg-sprites.css
+│  │  ├─ ./icon-fonts.css
+│  │  ├─ ./svg-sprites/
+│  │  └─ ./icon-fonts/
+│  ├─ ./images/
+│  └─ ./views/
+│     .
+│     .
+│     .
+│     └─ <page-name.html>         # пример организации исходников конкретной страницы (превращаются в Angular2-компоненты)
 │
 │
 │  # исходники для Angular2-компонент, генерируемые
