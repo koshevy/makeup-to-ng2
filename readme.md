@@ -148,6 +148,7 @@ StartKit для компонентной верстки
 │  │  ├─ ./icon-fonts.css
 │  │  ├─ ./svg-sprites/
 │  │  └─ ./icon-fonts/
+│  │
 │  ├─ ./images/
 │  └─ ./views/
 │     .
