@@ -1,8 +1,9 @@
 StartKit для компонентной верстки
 ==================================
 
-Сборщик: Bower
-Task-manager: Gulp
+- Сборщик: **Bower**
+- Task-manager: **Gulp**
+- **NPM** используется для пакетов для Gulp и т.п. 
 
 Установка
 ----------
@@ -44,6 +45,7 @@ Task-manager: Gulp
 ┬
 ├─ ./packages.json
 ├─ ./gulpfile.js
+├─ ./^node_modules/
 ├─ ./^vendor/
 │
 │  # исходники, которые будут собираться в HTML и Angular2-компоненты
