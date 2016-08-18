@@ -1,0 +1,43 @@
+{
+  "name": "makeup-to-ng2",
+  "version": "1.0.0",
+  "description": "Start-kit cybernetica team",
+  "scripts": {
+    "foo": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koshevy/makeup-to-ng2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koshevy/makeup-to-ng2/issues"
+  },
+  "homepage": "https://github.com/koshevy/makeup-to-ng2#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "es6-promise": "^3.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-frontnote": "^1.0.3",
+    "gulp-iconfont": "^8.0.1",
+    "gulp-iconfont-css": "^2.1.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svgicons2svgfont": "^3.0.1",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "lodash": "^4.15.0"
+  }
+}

@@ -5,6 +5,6 @@
 		"jquery"
 	],
 	"scripts": {
-		"preinstall": "bower --config.cwd=src --config.directory=base-framework install materialize"
+		"preinstall": "bower --config.cwd=src --config.directory=base-framework --config.scripts.preinstall= install materialize"
 	}
 }
