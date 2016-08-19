@@ -5,6 +5,10 @@
     "styles/index.scss"
   ],
   "dependencies": {
-    
+<<<<<<< HEAD
+    "foundation-sites": "^6.2.3"
+=======
+    "Swiper": "swiper#^3.3.1"
+>>>>>>> 5994d82356ac324bcffa801c539fdd3179b71004
   }
 }
