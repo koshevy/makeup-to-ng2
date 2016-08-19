@@ -1,14 +1,16 @@
 const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
-const autoPrefixer = require('gulp-autoprefixer');
+const autoprefixer = require('autoprefixer');
 require('es6-promise').polyfill();
 const cssComb = require('gulp-csscomb');
 const cmq = require('gulp-merge-media-queries');
+const postcss = require('gulp-postcss');
+const pxtorem = require('postcss-pxtorem');
 const frontnote = require('gulp-frontnote');
 const cleanCss = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
@@ -35,8 +37,8 @@ const
 
 
 const PATHS = {
-  src: 'app/src/',
-  dist: 'app/dist/'
+  src: 'src/',
+  dist: 'dist/'
 };
 
   gulp.task("build:icons", () => 
@@ -70,7 +72,54 @@ const PATHS = {
 	    .pipe(gulp.dest(PATHS.dist + 'fonts/icons/')) // set path to export your fonts
 	    .pipe(notify(fontName + ' compile'))
 	);
+
+  gulp.task('styles',() =>
+	gulp.src([PATHS.src + 'components/**/*.scss', PATHS.src + 'styles/**/*.scss'])
+		.pipe(sourcemaps.init())
+		.pipe(sass.sync({
+	      outputStyle: 'expanded',
+	      precision: 10,
+	    }).on('error', sass.logError))
+		.pipe(postcss([
+	      pxtorem({
+	        propWhiteList: [
+	          'font', 'font-size', 'line-height',
+	          'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+	          'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+	          'left', 'right', 'top', 'bottom',
+	          'width', 'height', 'min-width', 'max-width', 'max-height', 'min-height',
+	          'border-radius', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius',
+	          'border-width', 'border-left-width', 'border-right-width', 'border-top-width', 'border-bottom-width', 'border'
+	        ],
+	      }),
+	      autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}),
+	    ]))
+		
+		// .pipe(cmq({log:true}))
+		.pipe(concat('main.css'))
+		.pipe(cssComb())
+		.pipe(cleanCss())
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(PATHS.dist + 'styles/'))
+		.pipe(reload({stream:true}))
+		.pipe(notify('css task finished'))
+);
     
+gulp.task('serve', ['styles'], () => {
+  browserSync({
+    notify: false,
+    port: 9000,
+    tunnel: true,
+    server: {
+      baseDir: [PATHS.dist]
+    }
+  });
+
+  gulp.watch([PATHS.src +'fonts/svg-src/'],['build:icons']).on('change', reload);
+
+  gulp.watch([PATHS.src +'styles/**/*.scss', PATHS.src +'/components/**/*.scss'], ['styles']);
+  gulp.watch([PATHS.src +'fonts/svg-src/'], ['build:icons']);
+});
 
 function mapGlyphs(glyph) {
   return { name: glyph.name, codepoint: glyph.unicode[0].charCodeAt(0) }

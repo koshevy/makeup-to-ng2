@@ -5,6 +5,6 @@
     "styles/index.scss"
   ],
   "dependencies": {
-    
+    "Swiper": "swiper#^3.3.1"
   }
 }
