@@ -1,2 +1,4 @@
-@import 'layouts/index.scss';
+@import '../base-framework/materialize/sass/materialize.scss';
+@import '_global.scss';
 @import 'style-guide/index.scss';
+@import 'layouts/index.scss';

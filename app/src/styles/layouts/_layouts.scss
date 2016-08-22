@@ -2,7 +2,7 @@
 
 .wrapper {
 	overflow-x: hidden;
-	border: $page-wrapper-border $page-wrapper-border-color;
+	border: $page-wrapper-border;
 	background: $page-wrapper-background;
 }
 
@@ -14,7 +14,7 @@
 	width: 1170px;
 	margin: 0 auto;
 	padding: $page-content-padding;
-	border: $page-content-border $page-content-border-color;
+	border: $page-content-border;
 	background: $page-content-background;
 }
 
