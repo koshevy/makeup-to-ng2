@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>{{title}}</title>
 </head>
 <body>
-	{% include '../parts/_header.twig' %}
+	{% include ('../parts/_header.twig') with {'foo': 'bar'} only %}
+
 	{% block content %}{% endblock %}
+
 	{% include '../parts/_footer.twig' %}
+
+	<script src="test1"></script>
+	{% block scripts %}{% endblock %}
 </body>
 </html>
