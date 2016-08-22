@@ -110,7 +110,7 @@ gulp.task('views',() =>
 	gulp.src(PATHS.src + 'views/*.twig')
 		.pipe(twig())
 		.pipe(gulp.dest(PATHS.dist + '/views'))
-		.pipe(notify('twig task finished'))
+		.pipe(notify('views compile'))
 );
     
 gulp.task('serve', ['styles', 'views'], () => {
@@ -119,12 +119,12 @@ gulp.task('serve', ['styles', 'views'], () => {
     port: 9000,
     tunnel: true,
     server: {
-      baseDir: [PATHS.dist]
+      baseDir: [PATHS.dist + 'views']
     }
   });
 
   gulp.watch([PATHS.src +'fonts/svg-src/'],['build:icons']).on('change', reload);
-  gulp.watch([PATHS.src +'views/**/*.twig'], ['views']);
+  gulp.watch([PATHS.src +'views/**/*.twig'], ['views']).on('change', reload);
   gulp.watch([PATHS.src +'styles/**/*.scss', PATHS.src +'/components/**/*.scss'], ['styles']);
   gulp.watch([PATHS.src +'fonts/svg-src/'], ['build:icons']);
 });
