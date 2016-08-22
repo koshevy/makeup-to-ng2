@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "makeup-to-ng2",
   "description": "",
@@ -12,3 +13,15 @@
 >>>>>>> 5994d82356ac324bcffa801c539fdd3179b71004
   }
 }
+=======
+{
+  "name": "makeup-to-ng2",
+  "description": "",
+  "main": [
+    "styles/index.scss"
+  ],
+  "dependencies": {
+    "Swiper": "swiper#^3.3.1"
+  }
+}
+>>>>>>> 5994d82356ac324bcffa801c539fdd3179b71004
