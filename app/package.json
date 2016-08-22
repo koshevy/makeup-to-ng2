@@ -39,6 +39,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgicons2svgfont": "^3.0.1",
     "gulp-svgmin": "^1.2.2",
+    "gulp-twig": "^0.5.0",
     "gulp-uglify": "^2.0.0",
     "lodash": "^4.15.0",
     "postcss-pxtorem": "^3.3.1"
