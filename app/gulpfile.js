@@ -22,6 +22,7 @@ const svgicons2svgfont = require('gulp-svgicons2svgfont');
 const iconfont = require('gulp-iconfont');
 const iconfontCss = require('gulp-iconfont-css');
 const consolidate = require('gulp-consolidate');
+const twig = require('gulp-twig');
 const notify = require('gulp-notify');
 
 const
@@ -104,8 +105,14 @@ const PATHS = {
 		.pipe(reload({stream:true}))
 		.pipe(notify('css task finished'))
 );
+
+gulp.task('views',() =>
+	gulp.src(PATHS.src + 'views/**/*.twig')
+		.pipe(twig())
+		.pipe(gulp.dest(PATHS.dist + '/views'))
+);
     
-gulp.task('serve', ['styles'], () => {
+gulp.task('serve', ['styles', 'views'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -116,7 +123,7 @@ gulp.task('serve', ['styles'], () => {
   });
 
   gulp.watch([PATHS.src +'fonts/svg-src/'],['build:icons']).on('change', reload);
-
+  gulp.watch([PATHS.src +'views/**/*.twig'], ['views']);
   gulp.watch([PATHS.src +'styles/**/*.scss', PATHS.src +'/components/**/*.scss'], ['styles']);
   gulp.watch([PATHS.src +'fonts/svg-src/'], ['build:icons']);
 });
