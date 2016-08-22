@@ -107,9 +107,10 @@ const PATHS = {
 );
 
 gulp.task('views',() =>
-	gulp.src(PATHS.src + 'views/**/*.twig')
+	gulp.src(PATHS.src + 'views/*.twig')
 		.pipe(twig())
 		.pipe(gulp.dest(PATHS.dist + '/views'))
+		.pipe(notify('twig task finished'))
 );
     
 gulp.task('serve', ['styles', 'views'], () => {
