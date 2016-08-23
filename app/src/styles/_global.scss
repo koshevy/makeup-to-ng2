@@ -19,15 +19,14 @@ $page-content-background: #c1c1c1 !global;
 
 // Цвета навбара
 
-$navbar-background: #c2c2c2 !global;
+$navbar-background: red !global;
 
 // Границы
 
 $page-wrapper-border: none;
 $page-content-border: 1px solid #{$page-content-border-color};
 
-// Ширина враппера и контента
-
+// Ширина враппера и контент
 $page-wrapper-width: 100%;
 $page-content-width: 1280px;
 $page-content-width-min: 960px;
