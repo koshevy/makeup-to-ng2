@@ -1,17 +1,18 @@
+{# fedault.twig #}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>{{title}}</title>
+	<link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-	{% include ('../parts/_header.twig') with {'foo': 'bar', 'name': 'John'} only %}
-
-	{% block content %}{% endblock %}
-
-	{% include '../parts/_footer.twig' %}
-
-	<script src="test1"></script>
-	{% block scripts %}{% endblock %}
+	<div class="wrapper">
+		{% include ('../parts/_header.twig') %}
+		<div class="page-content">
+			{% block content %}{% endblock %}
+		</div>
+		{% include ('../parts/_footer.twig') %}
+	</div>
 </body>
 </html>

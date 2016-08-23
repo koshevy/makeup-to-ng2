@@ -1,0 +1,38 @@
+// Враппер страницы
+
+.wrapper {
+	overflow-x: hidden;
+	border: $page-wrapper-border;
+	background: $page-wrapper-background;
+}
+
+// Контент страницы
+
+.page-content {
+	position: relative;
+	min-width: $page-content-width-min;
+	width: 1170px;
+	margin: 0 auto;
+	padding: $page-content-padding;
+	border: $page-content-border;
+	background: $page-content-background;
+}
+
+// Секция контента
+
+.page-section {
+	margin: $page-section-margin;
+	padding: $page-section-padding;
+
+	.section-content {
+		margin: $page-section-margin;
+		padding: $page-section-padding;
+	}
+
+	&.section-wide {
+		.section-content {
+			width: 100vw;
+			margin-left: calc(-50vw + 50%);
+		}
+	}
+}
