@@ -141,7 +141,7 @@ gulp.task('serve', ['styles', 'views'], () => {
     notify: true,
     port: 9000,
     server: {
-      baseDir: [PATHS.dist + 'views']
+      baseDir: [PATHS.dist + 'views', PATHS.dist]
     }
   });
 
