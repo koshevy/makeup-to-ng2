@@ -5,7 +5,7 @@
 	<title>{{title}}</title>
 </head>
 <body>
-	{% include ('../parts/_header.twig') with {'foo': 'bar'} only %}
+	{% include ('../parts/_header.twig') with {'foo': 'bar', 'name': 'John'} only %}
 
 	{% block content %}{% endblock %}
 

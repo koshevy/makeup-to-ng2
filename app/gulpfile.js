@@ -17,6 +17,7 @@ const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const imageMin = require('gulp-imagemin');
 const svgmin = require('gulp-svgmin');
+const svgSprite = require("gulp-svg-sprite");
 const cache = require('gulp-cache');
 const svgicons2svgfont = require('gulp-svgicons2svgfont');
 const iconfont = require('gulp-iconfont');
@@ -112,12 +113,33 @@ gulp.task('views',() =>
 		.pipe(gulp.dest(PATHS.dist + '/views'))
 		.pipe(notify('views compile'))
 );
+
+var config = {
+  mode: {
+    symbol: { // symbol mode to build the SVG
+      dest: PATHS.dist + 'svg/sprites', // destination foldeer
+      sprite: 'sprite.svg', //sprite name
+      example: true // Build sample page
+    }
+  },
+  svg: {
+    xmlDeclaration: false, // strip out the XML attribute
+    doctypeDeclaration: false // don't include the !DOCTYPE declaration
+  }
+};
+
+gulp.task('build:sprites',() =>
+	gulp.src(PATHS.src + 'icons/**/*.svg')
+		.pipe(svgmin())
+	    .pipe(svgSprite(config))
+	    .pipe(gulp.dest('.'))
+	    .pipe(notify('svg sprites compile'))
+);
     
 gulp.task('serve', ['styles', 'views'], () => {
   browserSync({
-    notify: false,
+    notify: true,
     port: 9000,
-    tunnel: true,
     server: {
       baseDir: [PATHS.dist + 'views']
     }
@@ -125,6 +147,7 @@ gulp.task('serve', ['styles', 'views'], () => {
 
   gulp.watch([PATHS.src +'fonts/svg-src/'],['build:icons']).on('change', reload);
   gulp.watch([PATHS.src +'views/**/*.twig'], ['views']).on('change', reload);
+  gulp.watch([PATHS.src +'icons/**/*.svg'], ['build:sprites']).on('change', reload);
   gulp.watch([PATHS.src +'styles/**/*.scss', PATHS.src +'/components/**/*.scss'], ['styles']);
   gulp.watch([PATHS.src +'fonts/svg-src/'], ['build:icons']);
 });
