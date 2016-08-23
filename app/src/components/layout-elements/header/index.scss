@@ -1,0 +1,7 @@
+@import '../../../styles/_global.scss';
+@import '../../../styles/_mixins.scss';
+
+.mt-navbar {
+	background: $navbar-background;
+	outline: none;
+}

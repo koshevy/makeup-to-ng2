@@ -8,11 +8,11 @@
 </head>
 <body>
 	<div class="wrapper">
-		{% include ('../../components/layout-elements/header/index.twig') %}
+		{% include ('../parts/_header.twig') %}
 		<div class="page-content">
 			{% block content %}{% endblock %}
 		</div>
-		{% include ('../../components/layout-elements/footer/index.twig') %}
+		{% include ('../parts/_footer.twig') %}
 	</div>
 </body>
 </html>

@@ -1,17 +1,24 @@
+@import '../_global.scss';
+@import '../_mixins.scss';
+
 // Враппер страницы
 
 .wrapper {
 	overflow-x: hidden;
 	border: $page-wrapper-border;
 	background: $page-wrapper-background;
+	display: flex;
+	flex-direction: column;
+  min-height: 100vh;
 }
 
 // Контент страницы
 
 .page-content {
+	flex: 1 1 auto;
 	position: relative;
 	min-width: $page-content-width-min;
-	width: 1170px;
+	width: $page-content-width;
 	margin: 0 auto;
 	padding: $page-content-padding;
 	border: $page-content-border;
@@ -35,4 +42,53 @@
 			margin-left: calc(-50vw + 50%);
 		}
 	}
+}
+
+// Контейнер
+
+.container {
+	width: $container-width;
+	max-width: $container-max-width;
+
+	@media #{$medium-and-up} {
+	  .container {
+	    width: 100%;
+	  }
+	}
+	@media #{$large-and-up} {
+	  .container {
+	    width: 100%;
+	  }
+	}
+
+	@media #{$small-and-down} {
+	  .container {
+	    width: 100%;
+	  }
+	}
+
+	@media #{$medium-and-down} {
+	  .container {
+	    width: 100%;
+	  }
+	}
+
+	@media #{$medium-only} {
+	  .container {
+	    width: 100%;
+	  }
+	}
+}
+
+// Clearfix
+
+.clearfix {
+	@include clearfix;
+}
+
+// Позиционирование
+
+.page-header,
+.page-footer {
+	flex: none;
 }
