@@ -18,7 +18,6 @@ const concat = require('gulp-concat');
 const imageMin = require('gulp-imagemin');
 const svgmin = require('gulp-svgmin');
 const svgSprite = require("gulp-svg-sprite");
-const cache = require('gulp-cache');
 const svgicons2svgfont = require('gulp-svgicons2svgfont');
 const iconfont = require('gulp-iconfont');
 const iconfontCss = require('gulp-iconfont-css');
@@ -77,6 +76,7 @@ const PATHS = {
 
   gulp.task('styles',() =>
 	gulp.src([PATHS.src + 'components/**/*.scss', PATHS.src + 'styles/**/*.scss'])
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sourcemaps.init())
 		.pipe(sass.sync({
 	      outputStyle: 'expanded',
@@ -104,7 +104,6 @@ const PATHS = {
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(PATHS.dist + 'styles/'))
 		.pipe(reload({stream:true}))
-		.pipe(notify('css task finished'))
 );
 
 gulp.task('views',() =>
