@@ -4,15 +4,25 @@ html {
 	font-size: 16px;
 }
 
+body {
+	
+}
+
 // Враппер страницы
 
 .wrapper {
 	overflow-x: hidden;
 	border: $page-wrapper-border;
-	background: $page-wrapper-background;
+	background-color: $page-wrapper-background;
 	display: flex;
 	flex-direction: column;
   min-height: 100vh;
+
+  background-image: -moz-linear-gradient(red 1px, transparent 1px);
+  background-image: -ms-linear-gradient(red 1px, transparent 1px);
+  background-image: -o-linear-gradient(red 1px, transparent 1px);
+  background-image: linear-gradient(red 1px, transparent 1px);
+  background-size: 100% 1rem;
 }
 
 // Контент страницы
@@ -24,7 +34,7 @@ html {
 	width: $page-content-width;
 	margin: 0 auto;
 	border: $page-content-border;
-	background: $page-content-background;
+	//background: $page-content-background;
 }
 
 // Секция контента
