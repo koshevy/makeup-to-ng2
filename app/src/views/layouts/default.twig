@@ -9,6 +9,7 @@
 <body>
 	<div class="wrapper">
 		{% include ('../../components/layout-elements/header/index.twig') %}
+		{% block aside %}{% endblock %}
 		<div class="page-content">
 			{% block content %}{% endblock %}
 		</div>
