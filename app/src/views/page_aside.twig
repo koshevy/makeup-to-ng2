@@ -1,5 +1,11 @@
 {# index.twig #}
 {% extends 'layouts/default.twig' %}
+{% block aside %}
+	{% include ('../components/layout-elements/sideNav/index.twig') %}
+	{% block aside_dropdown %}
+		{% include ('../components/_controls/aside-dropdown/index.twig') %}
+	{% endblock %}
+{% endblock %}
 {% block content %}
 <div class="page-section">
 	<div class="section-content">

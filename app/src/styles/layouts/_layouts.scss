@@ -1,5 +1,8 @@
 @import '../_global.scss';
-@import '../_mixins.scss';
+
+html {
+	font-size: 16px;
+}
 
 // Враппер страницы
 
@@ -20,7 +23,6 @@
 	min-width: $page-content-width-min;
 	width: $page-content-width;
 	margin: 0 auto;
-	padding: $page-content-padding;
 	border: $page-content-border;
 	background: $page-content-background;
 }
@@ -28,12 +30,10 @@
 // Секция контента
 
 .page-section {
-	margin: $page-section-margin;
-	padding: $page-section-padding;
+	margin-bottom: $margin-indent-normal;
 
 	.section-content {
-		margin: $page-section-margin;
-		padding: $page-section-padding;
+		
 	}
 
 	&.section-wide {
@@ -47,6 +47,7 @@
 // Контейнер
 
 .container {
+	position: relative;
 	width: $container-width;
 	max-width: $container-max-width;
 

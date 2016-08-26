@@ -4,4 +4,8 @@
 .mt-navbar {
 	background: $navbar-background;
 	outline: none;
+
+	.brand-logo {
+		left: 25px;
+	}
 }
