@@ -15,7 +15,7 @@ const frontnote = require('gulp-frontnote');
 const cleanCss = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
-const imageMin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 const svgmin = require('gulp-svgmin');
 const svgSprite = require("gulp-svg-sprite");
 const svgicons2svgfont = require('gulp-svgicons2svgfont');
@@ -96,14 +96,22 @@ const PATHS = {
 	      }),
 	      autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}),
 	    ]))
-		
-		// .pipe(cmq({log:true}))
 		.pipe(concat('main.css'))
 		.pipe(cssComb())
 		.pipe(cleanCss())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(PATHS.dist + 'styles/'))
 		.pipe(reload({stream:true}))
+);
+
+gulp.task('scripts', () =>
+  gulp.src( PATHS.src +'views/**/*.js')
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('.'))
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest( PATHS.dist +'scripts'))
+    .pipe(reload({stream: true}));
 );
 
 gulp.task('views',() =>
@@ -133,8 +141,19 @@ gulp.task('build:sprites',() =>
 	    .pipe(gulp.dest('.'))
 	    .pipe(notify('svg sprites compile'))
 );
-    
-gulp.task('serve', ['styles', 'views'], () => {
+
+gulp.task('images', () => 
+	gulp.src(PATHS.src +'/images/*.*')
+    .pipe(imagemin())
+    .pipe(gulp.dest( PATHS.dist +'/images'));
+);
+
+gulp.task('fonts', () => 
+	gulp.src(PATHS.src+'fonts/ttf-fonts')
+		.pipe(gulp.dest(PATHS.dist+'fonts/text'))
+)
+
+gulp.task('serve', ['styles', 'views', 'scripts'], () => {
   browserSync({
     notify: true,
     port: 9000,
@@ -149,8 +168,12 @@ gulp.task('serve', ['styles', 'views'], () => {
 
   gulp.watch([PATHS.src +'fonts/svg-src/'],['build:icons']).on('change', reload);
   gulp.watch([PATHS.src +'icons/**/*.svg'], ['build:sprites']).on('change', reload);
+  gulp.watch([PATHS.src +'images/**/*.*'], ['images']).on('change', reload);
   gulp.watch([PATHS.src +'styles/**/*.scss', PATHS.src +'/components/**/*.scss'], ['styles']);
+  gulp.watch([PATHS.src +'views/**/*.js'], ['scripts']);
   gulp.watch([PATHS.src +'fonts/svg-src/'], ['build:icons']);
+  gulp.watch([PATHS.src +'fonts/ttf-fonts'], ['fonts']).on('change', reload);
+
 });
 
 function mapGlyphs(glyph) {
