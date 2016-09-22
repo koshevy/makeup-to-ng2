@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
+const fs = require('fs');
+const cache = require('gulp-cache');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
@@ -15,7 +17,7 @@ const frontnote = require('gulp-frontnote');
 const cleanCss = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
-const imageMin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 const svgmin = require('gulp-svgmin');
 const svgSprite = require("gulp-svg-sprite");
 const svgicons2svgfont = require('gulp-svgicons2svgfont');
@@ -24,6 +26,7 @@ const iconfontCss = require('gulp-iconfont-css');
 const consolidate = require('gulp-consolidate');
 const twig = require('gulp-twig');
 const notify = require('gulp-notify');
+const del = require('del');
 
 const
   // set name of your symbol font
@@ -56,14 +59,13 @@ const PATHS = {
 	      const options = {
 	        className,
 	        fontName,
-	        fontPath: 'icons/', // set path to font (from your CSS file if relative)
+	        fontPath: '../fonts/icons/', // set path to font (from your CSS file if relative)
 	        glyphs: glyphs.map(mapGlyphs)
 	      }
-	      gulp.src(PATHS.src + 'styles/style-guide/_icons.scss')
+	      gulp.src(PATHS.src + 'styles/style-guide/_icons-source.scss')
 	        .pipe(consolidate('lodash', options))
-	        .pipe(rename({ basename: fontName }))
-	        .pipe(sass())
-	        .pipe(gulp.dest(PATHS.dist + 'fonts/')) // set path to export your CSS
+	        .pipe(rename({ basename: '_icons' }))
+	        .pipe(gulp.dest(PATHS.src + 'styles/style-guide/')) // set path to export your CSS
 
 	      gulp.src(PATHS.src + 'styles/style-guide/icon-fonts-source.html')
 	        .pipe(consolidate('lodash', options))
@@ -71,17 +73,16 @@ const PATHS = {
 	        .pipe(gulp.dest(PATHS.dist + 'fonts/')) // set path to export your sample HTML
 	    })
 	    .pipe(gulp.dest(PATHS.dist + 'fonts/icons/')) // set path to export your fonts
-	    .pipe(notify(fontName + ' compile'))
 	);
 
   gulp.task('styles',() =>
-	gulp.src([PATHS.src + 'components/**/*.scss', PATHS.src + 'styles/**/*.scss'])
+	gulp.src([PATHS.src + 'main.scss', PATHS.src + 'index.modules.scss'])
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(sourcemaps.init())
+		//.pipe(sourcemaps.init())
 		.pipe(sass.sync({
 	      outputStyle: 'expanded',
 	      precision: 10,
-	    }).on('error', sass.logError))
+	    }).on('error', console.error.bind(console)))
 		.pipe(postcss([
 	      pxtorem({
 	        propWhiteList: [
@@ -96,20 +97,70 @@ const PATHS = {
 	      }),
 	      autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}),
 	    ]))
-		
-		// .pipe(cmq({log:true}))
-		.pipe(concat('main.css'))
+		//.pipe(concat('main.css'))
 		.pipe(cssComb())
 		.pipe(cleanCss())
-		.pipe(sourcemaps.write())
+		//.pipe(sourcemaps.write())
 		.pipe(gulp.dest(PATHS.dist + 'styles/'))
 		.pipe(reload({stream:true}))
 );
 
+gulp.task('build:modules', ['clean:modules'], () =>
+	gulp.src(PATHS.src + 'modules/**/*.scss')
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		//.pipe(sourcemaps.init())
+		.pipe(sass.sync({
+	      outputStyle: 'expanded',
+	      precision: 10,
+	    }).on('error', console.error.bind(console)))
+		.pipe(postcss([
+	      pxtorem({
+	        propWhiteList: [
+	          'font', 'font-size', 'line-height',
+	          'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+	          'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+	          'left', 'right', 'top', 'bottom',
+	          'width', 'height', 'min-width', 'max-width', 'max-height', 'min-height',
+	          'border-radius', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius',
+	          'border-width', 'border-left-width', 'border-right-width', 'border-top-width', 'border-bottom-width', 'border'
+	        ],
+	      }),
+	      autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}),
+	    ]))
+		//.pipe(concat('main.css'))
+		.pipe(cssComb())
+		.pipe(cleanCss())
+		//.pipe(sourcemaps.write())
+		.pipe(gulp.dest(PATHS.dist + 'modules/'))
+		.pipe(reload({stream:true}))
+);
+
+gulp.task('scripts', () =>
+  gulp.src([PATHS.src +'modules/**/*.js', PATHS.src + 'components/**/*.js'])
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    //.pipe(sourcemaps.init())
+    //.pipe(sourcemaps.write('.'))
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest( PATHS.dist +'scripts'))
+    .pipe(reload({stream: true}))
+);
+
 gulp.task('views',() =>
-	gulp.src(PATHS.src + 'views/*.twig')
-		.pipe(twig())
-		.pipe(gulp.dest(PATHS.dist + '/views'))
+	gulp.src(PATHS.src + 'modules/*/*.twig')
+		.pipe(twig({
+			base: PATHS.src,
+			onError: notify.onError("Error: <%= error.message %>")
+		}))
+		.pipe(rename({dirname: ''}))
+		.pipe(gulp.dest(PATHS.dist))
+);
+
+gulp.task('clean', () =>
+	del.sync(PATHS.dist)
+);
+
+gulp.task('clean:modules', () =>
+	del.sync(PATHS.dist + 'modules/')
 );
 
 var config = {
@@ -133,24 +184,48 @@ gulp.task('build:sprites',() =>
 	    .pipe(gulp.dest('.'))
 	    .pipe(notify('svg sprites compile'))
 );
-    
-gulp.task('serve', ['styles', 'views'], () => {
+
+gulp.task('images', () => 
+	gulp.src(PATHS.src +'/images/**/*.*')
+    .pipe(imagemin())
+    .pipe(gulp.dest( PATHS.dist +'/images'))
+);
+
+gulp.task('fonts', () => 
+	gulp.src(PATHS.src+'fonts/ttf-fonts/*.*')
+		.pipe(gulp.dest(PATHS.dist+'fonts/text'))
+)
+
+gulp.task('build', ['styles', 'views', 'scripts', 'images', 'fonts', 'build:icons']);
+
+gulp.task('default', ['clean'], function() {
+	gulp.start('build')
+});
+
+gulp.task('serve', ['styles', 'views', 'scripts'], () => {
   browserSync({
     notify: true,
     port: 9000,
     server: {
-      baseDir: [PATHS.dist + 'views', PATHS.dist]
-    }
+      baseDir: ['./', PATHS.dist]
+    },
+    routes: {
+        '/vendor': 'vendor'
+      }
   });
 
-  gulp.watch([PATHS.src +'views/**/*.twig', PATHS.src +'components/**/*.twig'], ['views']).on('change', function(file) {
+  gulp.watch([PATHS.src +'modules/**/*.twig', PATHS.src +'components/**/*.twig'], ['views']).on('change', function(file) {
     reload(file.path);
   });
 
   gulp.watch([PATHS.src +'fonts/svg-src/'],['build:icons']).on('change', reload);
   gulp.watch([PATHS.src +'icons/**/*.svg'], ['build:sprites']).on('change', reload);
-  gulp.watch([PATHS.src +'styles/**/*.scss', PATHS.src +'/components/**/*.scss'], ['styles']);
+  gulp.watch([PATHS.src +'images/**/*.*'], ['images']).on('change', reload);
+  gulp.watch([PATHS.src +'styles/**/*.scss', PATHS.src +'main.scss', PATHS.src +'index.modules.scss', PATHS.src + 'components/**/*.scss', PATHS.src + 'modules/**/components/**/*.scss'], ['styles']);
+  gulp.watch([PATHS.src +'views/**/*.js', PATHS.src + 'components/**/*.js'], ['scripts']);
   gulp.watch([PATHS.src +'fonts/svg-src/'], ['build:icons']);
+  gulp.watch([PATHS.src +'fonts/ttf-fonts'], ['fonts']).on('change', reload);
+
 });
 
 function mapGlyphs(glyph) {
