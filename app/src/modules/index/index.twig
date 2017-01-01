@@ -101,7 +101,7 @@ set headerScripts = [
                          data-x="center"
                          data-y="top"
                          data-hoffset="0"
-                         data-voffset="110"
+                         data-voffset="45"
                          data-width="320"
                          data-height="auto">
                         <img src="/images/sculptos-logo.png" alt="Sculptos Logo">
@@ -109,20 +109,30 @@ set headerScripts = [
                     <!-- // END LOGO LAYER -->
 
                     <div class="layer-description tp-caption"
-                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"opacity:0.1;x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"opacity:1;x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="text"
                          data-x="center"
                          data-y="top"
                          data-hoffset="0"
-                         data-voffset="220">
+                         data-voffset="120">
 
-                        WE ARE STRATEGISTS, ANALYTICS,<br>
-                        DEVELOPERS AND CREATIVE MINDS<br>
+                        WE ARE<br>
+                        STRATEGISTS · ANALYTICS<br>
+                        DEVELOPERS · CREATIVE MINDS<br>
                         CONNECTED TOGETHER TO BRING<br>
-                        INNOVATIVE IDEAS TO LIFE.<br>
+                        INNOVATIVE IDEAS TO LIFE<br>
 
-                        <br>
+                    </div>
 
+                    <div class="layer-description tp-caption"
+                         data-frames='[{"delay": 4000, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-type="text"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="280">
+
+                        <div class="scroll-line"></div>
 
                         <a class="base-link">SKIP INTRO</a>
                     </div>
@@ -143,6 +153,29 @@ set headerScripts = [
                          data-height="1500">
                     </div>
                     <!-- // END OVERLAY LAYER -->
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
                 </li>
 
                 <li class="rslide-white-info" data-transition="slidevertical">
