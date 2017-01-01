@@ -56,6 +56,11 @@ body {
 			}
 		}
 
+		.layer-at-grid{
+			width: 1200px;
+			margin: 0 auto !important;
+		}
+
 		.layer-description{
 			color: #fff;
 			font-family: 'Cinzel';
@@ -77,6 +82,14 @@ body {
 	height: 175px;
 	background: #fff;
 	margin: 22px auto;
+}
+
+.r-slide-header-back{
+	color: #e5e6e7;
+	font-family: 'Cinzel';
+	font-size: 200px;
+	line-height: 190px;
+	opacity: 0.2;
 }
 
 .tp-video-play-button{
