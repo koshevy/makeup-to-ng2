@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pageTitle }}</title>
+
+    <link rel="stylesheet" href="vendor/normalize-css/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    {% for headerScript in headerScripts %}
+    <script src="{{ headerScript }}"></script>
+    {% endfor %}
+
+    {% for headerStyle in headerStyles %}
+    <link rel="stylesheet" href="{{ headerStyle }}">
+    {% endfor %}
+
+</head>
+
+<body data-template="{{template}}">
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

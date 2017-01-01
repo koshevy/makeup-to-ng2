@@ -1,105 +1,82 @@
-@import '../_global.scss';
-
 html {
 	font-size: 16px;
 }
 
+.base-link{
+	font-size: 1.1rem;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 body {
-	
-}
+	background: #000;
+	font-family: 'Karla';
 
-// Враппер страницы
+	.fullscreen-container{
+		#rslide-main-screen{
+			.layer-logo{
+				img{
+					width: 100% !important;
+					height: auto !important;
+				}
+			}
+		}
 
-.wrapper {
-	overflow-x: hidden;
-	border: $page-wrapper-border;
-	background-color: $page-wrapper-background;
-	display: flex;
-	flex-direction: column;
-  min-height: 100vh;
+		.rslide-white-info{
+			//background: #fff;
+		}
 
-  background-image: -moz-linear-gradient(#c2c2c2 1px, transparent 1px);
-  background-image: -ms-linear-gradient(#c2c2c2 1px, transparent 1px);
-  background-image: -o-linear-gradient(#c2c2c2 1px, transparent 1px);
-  background-image: linear-gradient(#c2c2c2 1px, transparent 1px);
-  background-size: 100% 1rem;
-}
+		.layer-overlay{
+			position: relative;
+			background: #111f2e;
+		}
 
-// Контент страницы
+		.layer-grid{
+			.v-lines{
+				display: table;
+				width: 1200px;
+				max-height: 100%;
+				margin: 0 auto !important;
+				overflow: hidden;
 
-.page-content {
-	flex: 1 1 auto;
-	position: relative;
-	min-width: $page-content-width-min;
-	width: $page-content-width;
-	margin: 0 auto;
-	border: $page-content-border;
-	//background: $page-content-background;
-}
+				.v-wrap{
+					display: table-row;
 
-// Секция контента
+					.v-column{
+						display: table-cell;
+						height: 3000px;
+						width: 20%;
+						border-right: 1px solid #fff;
 
-.page-section {
-	margin-bottom: $margin-indent-normal;
+						&:first-child{
+							border-left: 1px solid #fff;
+						}
+					}
+				}
+			}
+		}
 
-	.section-content {
-		
-	}
+		.layer-description{
+			color: #fff;
+			font-family: 'Cinzel';
+			font-size: 20px;
+			text-align: center !important;
+			line-height: 40px;
+		}
 
-	&.section-wide {
-		.section-content {
-			width: 100vw;
-			margin-left: calc(-50vw + 50%);
+		.layer-who-we-are{
+			.defaultimg{
+			}
 		}
 	}
 }
 
-// Контейнер
+.tp-video-play-button{
+	display: none !important;
+}
 
-.container {
+.tp-bullet{
 	position: relative;
-	width: $container-width;
-	max-width: $container-max-width;
-
-	@media #{$medium-and-up} {
-	  .container {
-	    width: 100%;
-	  }
-	}
-	@media #{$large-and-up} {
-	  .container {
-	    width: 100%;
-	  }
-	}
-
-	@media #{$small-and-down} {
-	  .container {
-	    width: 100%;
-	  }
-	}
-
-	@media #{$medium-and-down} {
-	  .container {
-	    width: 100%;
-	  }
-	}
-
-	@media #{$medium-only} {
-	  .container {
-	    width: 100%;
-	  }
-	}
-}
-
-// Clearfix
-
-.clearfix {
-	@include clearfix;
-}
-
-// Позиционирование
-
-.page-header,
-.page-footer {
-	flex: none;
+	//top: 12px;
+	border-color: #efefef !important;
 }

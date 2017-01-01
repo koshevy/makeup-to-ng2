@@ -5,10 +5,7 @@
     "styles/index.scss"
   ],
   "dependencies": {
-    "Swiper": "swiper#^3.3.1"
+    "jquery": "~1.9.1",
+    "normalize-css": "^5.0.0"
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 92fe83a60498c0f1a17e8cc4ca66fb1c6d44e0f7
