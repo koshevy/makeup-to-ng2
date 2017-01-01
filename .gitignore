@@ -41,6 +41,4 @@ jspm_packages
 .idea/modules.xml
 .idea/workspace.xml
 /app/src/base-framework/
-/app/vendor/
 node_modules/
-/app/dist/

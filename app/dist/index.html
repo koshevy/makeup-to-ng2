@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sculptos — The Main Page</title>
+
+    <link rel="stylesheet" href="vendor/normalize-css/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+        <script src="vendor/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="vendor/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="vendor/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="scripts/main.js"></script>
+    
+        <link rel="stylesheet" href="vendor/revolution-slider/css/settings.css">
+        <link rel="stylesheet" href="vendor/revolution-slider/css/layers.css">
+        <link rel="stylesheet" href="vendor/revolution-slider/css/navigation.css">
+    
+</head>
+
+<body data-template="index">
+
+    
+    <div class="rev_slider_wrapper fullscreen-container">
+
+        <!-- the ID here will be used in the JavaScript below to initialize the slider -->
+        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none">
+
+            <!-- BEGIN MAIN SLIDE LIST -->
+            <ul>
+
+                <!-- BEGIN FIRST SCREEN SLIDER  -->
+                <li id="rslide-main-screen" data-transition="crossfade" data-blendmode=”color-burn“>
+
+                    <!-- BEGIN HTML5 VIDEO LAYER -->
+                    <div class="tp-caption tp-resizeme tp-videolayer rs-parallaxlevel-0"
+
+                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+
+                         data-type="video"
+                         data-videomp4="images/samples/intro.mp4"
+                         data-videowidth="1280"
+                         data-videoheight="720"
+                         data-autoplay="on"
+                         data-videocontrols="none"
+                         data-nextslideatend="true"
+                         data-forcerewind="off"
+                         data-videoloop="none"
+                         data-allowfullscreenvideo="true"
+                         data-videopreload="auto"
+
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-basealign="slide">
+
+                        <div>
+
+                            <!-- BEGIN OVERLAY LAYER -->
+                            <div class="layer-overlay tp-caption tp-resizeme rs-parallaxlevel-0"
+                                 data-frames='[{"delay": 1000, "speed": 500, "from": "opacity: 0", "to": "opacity: 0.5"}]'
+                                 data-x="center"
+                                 data-y="center"
+                                 data-hoffset="0"
+                                 data-voffset="0"
+                                 data-width="100%"
+                                 data-height="1500">
+
+                            </div>
+                            <!-- // END OVERLAY LAYER -->
+
+                            <!-- BEGIN GRID LAYER -->
+                            <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-10"
+                                 data-frames='[{"delay": 1000, "speed": 2500, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                                 data-x="center"
+                                 data-y="center"
+                                 data-hoffset="0"
+                                 data-voffset="0"
+                                 data-height="1500">
+
+                                <div class="v-lines">
+                                    <div class="v-wrap">
+                                        <div class="v-column"></div>
+                                        <div class="v-column"></div>
+                                        <div class="v-column"></div>
+                                        <div class="v-column"></div>
+                                        <div class="v-column"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- // END GRID LAYER -->
+
+                            <!-- BEGIN LOGO LAYER -->
+                            <div class="layer-logo tp-caption tp-resizeme rs-parallaxlevel-0"
+                                 data-frames='[{"delay":1200,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-type="image"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="45"
+                                 data-width="320"
+                                 data-height="auto">
+                                <img src="/images/sculptos-logo.png" alt="Sculptos Logo">
+                            </div>
+                            <!-- // END LOGO LAYER -->
+
+                            <div class="layer-description tp-caption rs-parallaxlevel-10"
+                                 data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"opacity:0.1;x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"opacity:1;x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-type="text"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="120">
+
+                                WE ARE<br>
+                                STRATEGISTS · ANALYTICS<br>
+                                DEVELOPERS · CREATIVE MINDS<br>
+                                CONNECTED TOGETHER TO BRING<br>
+                                INNOVATIVE IDEAS TO LIFE<br>
+
+                            </div>
+
+                            <div class="layer-description tp-caption rs-parallaxlevel-4"
+                                 data-frames='[{"delay": 4000, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                                 data-type="text"
+                                 data-x="center"
+                                 data-y="top"
+                                 data-hoffset="0"
+                                 data-voffset="280">
+
+                                <div class="scroll-line"></div>
+
+                                <a class="base-link">SKIP INTRO</a>
+                            </div>
+
+                </li>
+                <!-- // END FIRST SCREEN SLIDER  -->
+
+                <li class="layer-who-we-are" data-transition="crossfade">
+                    <img src="images/samples/intro-bg.jpg" class="rev-slidebg">
+
+                    <!-- BEGIN OVERLAY LAYER -->
+                    <div class="layer-overlay tp-caption tp-resizeme"
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0.5", "to": "opacity: 0.85"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-width="100%"
+                         data-height="1500">
+                    </div>
+                    <!-- // END OVERLAY LAYER -->
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-100">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back">
+                                BORN TO<br/>
+                                CREATE
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-100">
+                    </div>
+
+                    <div class="">
+
+                    </div>
+
+                </li>
+
+                <li class="rslide-white-info" data-transition="slidevertical">
+
+                    <img src="images/samples/white-bg.jpg"
+                         class="rev-slidebg"
+                         data-bgrepeat="no-repeat">
+
+                    <div class="tp-caption"
+                         data-frames='[{"delay": 2600, "speed": 800, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 300, "to": "opacity: 0"}]'
+                         data-type="text"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="220">
+
+                        WE ARE STRATEGISTS, ANALYTICS,<br>
+                        DEVELOPERS AND CREATIVE MINDS<br>
+                        CONNECTED TOGETHER TO BRING<br>
+                        INNOVATIVE IDEAS TO LIFE.<br>
+
+                        <br>
+
+                        <a class="base-link">SKIP INTRO</a>
+                    </div>
+
+                </li>
+
+                <li class="rslide-white-info" data-transition="slidevertical">
+
+                    <img src="images/samples/white-bg.jpg"
+                         class="rev-slidebg"
+                         data-bgrepeat="no-repeat">
+
+                    <div class="tp-caption"
+                         data-frames='[{"delay": 2600, "speed": 800, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 300, "to": "opacity: 0"}]'
+                         data-type="text"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="220">
+
+                        WE ARE STRATEGISTS, ANALYTICS,<br>
+                        DEVELOPERS AND CREATIVE MINDS<br>
+                        CONNECTED TOGETHER TO BRING<br>
+                        INNOVATIVE IDEAS TO LIFE.<br>
+
+                    </div>
+
+                </li>
+
+            </ul>
+            <!-- // END FIRST SCREEN SLIDER  -->
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
