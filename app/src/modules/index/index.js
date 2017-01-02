@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
         /* options are 'auto', 'fullwidth' or 'fullscreen' */
         sliderLayout: 'fullscreen',
         stopLoop: 'on',
-        stopAfterLoops: 1,
+        stopAfterLoops: 0,
         stopAtSlide: 1,
 
         parallax: {
