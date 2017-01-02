@@ -22,13 +22,19 @@ body {
 			}
 		}
 
-		.layer-overlay{
+		.layer-overlay,
+		.layer-overlay-gray{
 			position: relative;
 			background: #111f2e;
+
+			&.layer-overlay-gray{
+				background: #fff;
+			}
 		}
 
 		.layer-grid,
 		.layer-grid-dark{
+
 			.v-lines{
 				display: table;
 				width: 1200px;
@@ -96,6 +102,84 @@ body {
 				height: auto !important;;
 			}
 		}
+
+		.progress-bar{
+			display: block;
+			height: 8px;
+			padding: 0;
+			margin: 0;
+			background: #ccc;
+			overflow: hidden;
+
+			> .indicator{
+				display: block;
+				height: 8px;
+				padding: 0;
+				margin: 0;
+				width: 20%;
+				background: #333;
+			}
+
+			&[data-step="2"]{
+				> .indicator{
+					width: 40%;
+				}
+			}
+
+			&[data-step="3"]{
+				> .indicator{
+					width: 60%;
+				}
+			}
+
+			&[data-step="4"]{
+				> .indicator{
+					width: 80%;
+				}
+			}
+
+			&[data-step="5"]{
+				> .indicator{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+#main-menu{
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	padding: 18px 0;
+	margin: 0;
+	//background: #000;
+	text-align: center;
+
+	z-index: 999;
+
+	li{
+		display: inline-block;
+		margin: 0;
+		padding: 0 12px;
+		color: #fff;
+		font-size: 14px;
+		text-transform: uppercase;
+		font-family: 'Cinzel';
+		letter-spacing: 1px;
+
+		a{
+			display: inline-block;
+			color: #fff;
+			padding: 6px 0px;
+			cursor: pointer;
+		}
+
+		&.active a{
+			border-bottom: 1px solid #fff;
+		}
 	}
 }
 
@@ -110,6 +194,12 @@ body {
 	&.scroll-line-short{
 		height: 80px;
 	}
+}
+
+.gray-block{
+	background: #f7f7f7;
+	padding: 52px 0;
+	margin: 0 -1500px;
 }
 
 .r-slide-header-back,
@@ -162,4 +252,37 @@ body {
 	position: relative;
 	//top: 12px;
 	border-color: #efefef !important;
+}
+
+.service-description{
+	padding-right: 18px;
+	white-space: normal !important;
+	word-break: normal !important;
+	word-wrap: normal !important;
+	font-size: 18px;
+}
+
+.service-items{
+	padding-right: 18px;
+	margin-top: 18px;
+	white-space: normal !important;
+	word-break: normal !important;
+	word-wrap: normal !important;
+	font-size: 15px;
+	color: #bfbfbf;
+}
+
+.service-number{
+	font-family: 'Cinzel';
+	position: relative;
+	left: -22px;
+	font-size: 80px;
+	font-weight: bold;
+	color: #dfdfdf;
+}
+
+.service-name{
+	position: relative;
+	margin-top: -14px;
+	z-index: 102;
 }

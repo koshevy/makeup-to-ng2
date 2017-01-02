@@ -23,6 +23,15 @@ set headerScripts = [
 {% extends 'layouts/default.twig' %}
 {% block content %}
 
+    <ul id="main-menu">
+        <li class="active"><a>Intro</a><li>  ·
+        <li><a>Who we are</a><li> ·
+        <li><a>What we do</a><li> ·
+        <li><a>How we work</a><li> ·
+        <li><a>Our works</a><li>
+       </li>
+    </ul>
+
     <div class="rev_slider_wrapper fullscreen-container">
 
         <!-- the ID here will be used in the JavaScript below to initialize the slider -->
@@ -140,7 +149,7 @@ set headerScripts = [
                 </li>
                 <!-- // END FIRST SCREEN SLIDER  -->
 
-                <li class="layer-who-we-are" data-transition="crossfade">
+                <li class="layer-who-we-are" data-transition="fade">
                     <img src="images/samples/intro-bg.jpg" class="rev-slidebg">
 
                     <!-- BEGIN OVERLAY LAYER -->
@@ -250,11 +259,545 @@ set headerScripts = [
                         <div class="scroll-line-short"></div>
 
                         <a class="r-slide-plain-text-light base-link">
-                            HOW WE WORK
+                            WHAT WE ARE DO
                         </a>
 
                     </div>
 
+
+                </li>
+
+                <li class="layer-who-we-are" data-transition="slidevertical">
+
+                    <img src="images/samples/white-bg.jpg"
+                         class="rev-slidebg"
+                         data-bgrepeat="no-repeat">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-dark">
+                                WHAT WE<br/>
+                                ARE DO
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 800, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="bottom"
+                         data-hoffset="0"
+                         data-voffset="0">
+
+                        <div class="layer-at-grid">
+                            <div class="gray-block">
+                                <div class="layer-at-grid">
+
+                                    <table width="100%">
+
+                                        <tr>
+                                            <td width="33%" valign="top">
+                                                <span class="service-number">I</span>
+                                                <h3 class="service-name">
+                                                    Brand sculpting
+                                                </h3>
+                                                <div class="service-description">
+                                                    We bring brands to life by carving  its’
+                                                    strategy, direc-tion, vision and communica-tion
+                                                    plans, & sculpt in beauti-ful form and image.
+                                                    We rede-sign and remodel brands to uncover its
+                                                    new opportunities to live.
+                                                </div>
+                                                <div class="service-items">
+                                                    Brand creation | Brand recreation |
+                                                    Brand positionning & communicatio | Brand essence
+                                                </div>
+                                            </td>
+                                            <td width="33%" valign="top">
+                                                <span class="service-number">II</span>
+                                                <h3 class="service-name">
+                                                    Product sculpting
+                                                </h3>
+                                                <div class="service-description">
+                                                    We innovate, create, optimize risks, tell stories,
+                                                    plan new invasions to coun-tries, markets and
+                                                    retail. We design products that make lives better.
+                                                </div>
+                                                <div class="service-items">
+                                                    New product innovation | New product line in existing brand family |
+                                                    Product planning on market invassion | Product communication
+                                                </div>
+                                            </td>
+                                            <td width="33%" valign="top">
+                                                <span class="service-number">III</span>
+                                                <h3 class="service-name">
+                                                    Experience sculpting
+                                                </h3>
+                                                <div class="service-description">
+                                                    We attract consumers, make them feel the brand,
+                                                    educate teams about branding and experiment with
+                                                    new technolo-gies.
+                                                </div>
+                                                <div class="service-items">
+                                                    Retail / spaice experience | Vertual reality experience |
+                                                    Degital presence | Workshops and brand labs
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </li>
+
+                <li class="rslide-white-info" data-transition="slidevertical">
+
+                    <img src="images/samples/white-bg.jpg"
+                         class="rev-slidebg"
+                         data-bgrepeat="no-repeat">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                             data-frames='[{"delay": 800, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
+                             data-x="center"
+                             data-y="center"
+                             data-hoffset="0"
+                             data-voffset="-180">
+
+                            <div class="layer-at-grid">
+                                <div class="r-slide-header-back-dark">
+                                    HOW WE<br/>
+                                    WORK
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                             data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-x="left"
+                             data-y="center"
+                             data-hoffset="0"
+                             data-voffset="-25">
+
+                            <div class="r-slide-header-front-dark">
+                                Sketch
+                            </div>
+
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                             data-frames='[{"delay":400,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-x="left"
+                             data-y="center"
+                             data-hoffset="0"
+                             data-voffset="70">
+
+                            <div class="r-slide-plain-text-dark">
+                                We bring brands to life by sculpting innovative products,<br/>
+                                sketching strategic direction while propelling creative<br/>
+                                campaigns to actual sales.
+                            </div>
+
+                        </div>
+
+
+                        <!-- BEGIN ILLUSTRATION LAYER -->
+                        <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
+                             data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-type="image"
+                             data-x="right"
+                             data-y="top"
+                             data-hoffset="-86"
+                             data-voffset="-70"
+                             data-width="500"
+                             data-width="['auto']">
+
+                            <img src="/images/samples/sculpture-1.png" />
+                        </div>
+                        <!-- // END ILLUSTRATION LAYER -->
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                             data-frames='[{"delay": 800, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}]'
+                             data-x="center"
+                             data-y="bottom"
+                             data-hoffset="0"
+                             data-voffset="-50">
+
+                            <div class="layer-at-grid">
+                                <div class="progress-bar">
+                                    <div class="indicator"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                </li>
+
+                <li class="rslide-white-info" data-transition="slidevertical">
+
+                    <img src="images/samples/white-bg.jpg"
+                         class="rev-slidebg"
+                         data-bgrepeat="no-repeat">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-dark">
+                                HOW WE<br/>
+                                WORK
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BEGIN ILLUSTRATION LAYER -->
+                    <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":0,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="left"
+                         data-y="top"
+                         data-hoffset="-56"
+                         data-voffset="120"
+                         data-width="500"
+                         data-width="['auto']">
+
+                        <img src="/images/samples/sculpture-2.png" />
+                    </div>
+                    <!-- // END ILLUSTRATION LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="left"
+                         data-y="center"
+                         data-hoffset="480"
+                         data-voffset="-125">
+                        <div class="r-slide-header-front-dark">
+                            Cut
+                        </div>
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="left"
+                         data-y="top"
+                         data-hoffset="480"
+                         data-voffset="180">
+
+                        <div class="r-slide-plain-text-dark">
+                            We concentrate on the main.<br/>
+                            <br/>
+                            That carving methods helped startups, corporations<br/>
+                            and numerous companies to impact globally and make<br/>
+                            our lives better. Agency is located in San Diego,<br/>
+                            CA and unites community of brand sculptors, creative<br/>
+                            artists and developers.
+                        </div>
+
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{}]'
+                         data-x="center"
+                         data-y="bottom"
+                         data-hoffset="0"
+                         data-voffset="-50">
+
+                        <div class="layer-at-grid">
+                            <div class="progress-bar" data-step="2">
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li class="rslide-white-info" data-transition="slidevertical">
+
+                    <img src="images/samples/white-bg.jpg"
+                         class="rev-slidebg"
+                         data-bgrepeat="no-repeat">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-dark">
+                                HOW WE<br/>
+                                WORK
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BEGIN ILLUSTRATION LAYER -->
+                    <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":0,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="right"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="-61"
+                         data-width="575"
+                         data-width="['auto']">
+
+                        <img src="/images/samples/sculpture-3.png" />
+                    </div>
+                    <!-- // END ILLUSTRATION LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="left"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-20">
+                        <div class="r-slide-header-front-dark">
+                            Unleash
+                        </div>
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="left"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="285">
+
+                        <div class="r-slide-plain-text-dark">
+                            We bring brands to life by sculpting innovative<br/>
+                            products, sketching strategic direction<br/>
+                            while propelling creative<br/>
+                            campaigns to actual sales.
+                        </div>
+
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{}]'
+                         data-x="center"
+                         data-y="bottom"
+                         data-hoffset="0"
+                         data-voffset="-50">
+
+                        <div class="layer-at-grid">
+                            <div class="progress-bar" data-step="3">
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li class="rslide-white-info" data-transition="slidevertical">
+
+                    <img src="images/samples/white-bg.jpg"
+                         class="rev-slidebg"
+                         data-bgrepeat="no-repeat">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-dark">
+                                HOW WE<br/>
+                                WORK
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BEGIN ILLUSTRATION LAYER -->
+                    <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-type="image"
+                         data-x="left"
+                         data-y="top"
+                         data-hoffset="-52"
+                         data-voffset="120"
+                         data-width="500"
+                         data-width="['auto']">
+
+                        <img src="/images/samples/sculpture-4.png" />
+                    </div>
+                    <!-- // END ILLUSTRATION LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="left"
+                         data-y="center"
+                         data-hoffset="480"
+                         data-voffset="-125">
+                        <div class="r-slide-header-front-dark">
+                            Labor
+                        </div>
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="left"
+                         data-y="top"
+                         data-hoffset="480"
+                         data-voffset="180">
+
+                        <div class="r-slide-plain-text-dark">
+                            Agency is located in San Diego,<br/>
+                            CA and unites community of brand sculptors, creative<br/>
+                            artists and developers.
+                        </div>
+
+                    </div>
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{}]'
+                         data-x="center"
+                         data-y="bottom"
+                         data-hoffset="0"
+                         data-voffset="-50">
+
+                        <div class="layer-at-grid">
+                            <div class="progress-bar" data-step="4">
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </li>
 
@@ -304,20 +847,20 @@ set headerScripts = [
                              data-x="left"
                              data-y="center"
                              data-hoffset="0"
-                             data-voffset="-15">
+                             data-voffset="-25">
 
                             <div class="r-slide-header-front-dark">
-                                Sketch
+                                Proclaim
                             </div>
 
                         </div>
 
                         <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-frames='[{"delay":400,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-x="left"
                              data-y="center"
                              data-hoffset="0"
-                             data-voffset="50">
+                             data-voffset="70">
 
                             <div class="r-slide-plain-text-dark">
                                 We bring brands to life by sculpting innovative products,<br/>
@@ -327,100 +870,39 @@ set headerScripts = [
 
                         </div>
 
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":800,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-x="left"
-                             data-y="center"
-                             data-hoffset="0"
-                             data-voffset="160">
-
-                            <div class="r-slide-plain-text-dark">
-                                That carving methods helped startups, corporations and<br/>
-                                numerous companies to impact globally and make our lives better.<br/>
-                                Agency is located in San Diego, CA and unites community of brand<br/>
-                                sculptors, creative artists and developers.
-                            </div>
-
-                        </div>
 
                         <!-- BEGIN ILLUSTRATION LAYER -->
-                        <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-1"
+                        <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
                              data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="image"
                              data-x="right"
                              data-y="top"
-                             data-hoffset="-84"
-                             data-voffset="-80"
+                             data-hoffset="0"
+                             data-voffset="-70"
                              data-width="500"
                              data-width="['auto']">
 
-                            <img src="/images/samples/sculpture-1.png" />
+                            <img src="/images/samples/sculpture-5.png" />
                         </div>
                         <!-- // END ILLUSTRATION LAYER -->
 
                     </div>
                     <!-- // END GRID LAYER -->
 
-                </li>
-
-                <li class="rslide-white-info" data-transition="slidevertical">
-
-                    <img src="images/samples/white-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgrepeat="no-repeat">
-
-                    <!-- BEGIN GRID LAYER -->
-                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="0"
-                         data-height="1500">
-
-                        <div class="v-lines">
-                            <div class="v-wrap">
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- // END GRID LAYER -->
-
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
                          data-x="center"
-                         data-y="center"
+                         data-y="bottom"
                          data-hoffset="0"
-                         data-voffset="-180">
+                         data-voffset="-50">
 
                         <div class="layer-at-grid">
-                            <div class="r-slide-header-back-dark">
-                                HOW WE<br/>
-                                WORK
+                            <div class="progress-bar" data-step="5">
+                                <div class="indicator"></div>
                             </div>
                         </div>
 
                     </div>
-
-                    <!-- BEGIN ILLUSTRATION LAYER -->
-                    <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-1"
-                         data-frames='[{"delay":0,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-type="image"
-                         data-x="left"
-                         data-y="top"
-                         data-hoffset="-60"
-                         data-voffset="120"
-                         data-width="500"
-                         data-width="['auto']">
-
-                        <img src="/images/samples/sculpture-2.png" />
-                    </div>
-                    <!-- // END ILLUSTRATION LAYER -->
 
                 </li>
 
