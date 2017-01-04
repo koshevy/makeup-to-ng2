@@ -150,12 +150,12 @@
                 </li>
                 <!-- // END FIRST SCREEN SLIDER  -->
 
-                <li class="layer-who-we-are" data-transition="fade">
+                <li class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
                     <img src="images/samples/intro-bg.jpg" class="rev-slidebg">
 
                     <!-- BEGIN OVERLAY LAYER -->
                     <div class="layer-overlay tp-caption tp-resizeme"
-                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0.5", "to": "opacity: 0.85"}]'
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0.5", "to": "opacity: 0.85"},{"delay":"wait","speed":500,"from": "opacity: 0.85", "to": "opacity: 0"}]'
                          data-x="center"
                          data-y="center"
                          data-hoffset="0"
@@ -270,9 +270,7 @@
 
                 <li class="layer-who-we-are" data-transition="slidevertical">
 
-                    <img src="images/samples/white-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgrepeat="no-repeat">
+                    <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
 
                     <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
@@ -297,7 +295,7 @@
                     <!-- // END GRID LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-frames='[{"delay": 700, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
                          data-x="center"
                          data-y="center"
                          data-hoffset="0"
@@ -313,7 +311,7 @@
                     </div>
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
-                         data-frames='[{"delay": 800, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-frames='[{"delay":500,"speed":600,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-x="center"
                          data-y="bottom"
                          data-hoffset="0"
@@ -386,13 +384,9 @@
 
                 </li>
 
+                <!--
                 <li class="rslide-white-info" data-transition="slidevertical">
 
-                    <img src="images/samples/white-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgrepeat="no-repeat">
-
-                    <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
                          data-x="center"
@@ -455,8 +449,6 @@
 
                         </div>
 
-
-                        <!-- BEGIN ILLUSTRATION LAYER -->
                         <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
                              data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="image"
@@ -469,7 +461,6 @@
 
                             <img src="/images/samples/sculpture-1.png" />
                         </div>
-                        <!-- // END ILLUSTRATION LAYER -->
 
                         <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                              data-frames='[{"delay": 800, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}]'
@@ -487,17 +478,10 @@
                         </div>
 
                     </div>
-                    <!-- // END GRID LAYER -->
 
                 </li>
-
                 <li class="rslide-white-info" data-transition="slidevertical">
 
-                    <img src="images/samples/white-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgrepeat="no-repeat">
-
-                    <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
                          data-x="center"
@@ -517,7 +501,6 @@
                         </div>
 
                     </div>
-                    <!-- // END GRID LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
@@ -535,7 +518,6 @@
 
                     </div>
 
-                    <!-- BEGIN ILLUSTRATION LAYER -->
                     <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay":0,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="image"
@@ -548,7 +530,6 @@
 
                         <img src="/images/samples/sculpture-2.png" />
                     </div>
-                    <!-- // END ILLUSTRATION LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -596,14 +577,8 @@
                     </div>
 
                 </li>
-
                 <li class="rslide-white-info" data-transition="slidevertical">
 
-                    <img src="images/samples/white-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgrepeat="no-repeat">
-
-                    <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
                          data-x="center"
@@ -623,7 +598,6 @@
                         </div>
 
                     </div>
-                    <!-- // END GRID LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
@@ -641,7 +615,6 @@
 
                     </div>
 
-                    <!-- BEGIN ILLUSTRATION LAYER -->
                     <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay":0,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-type="image"
@@ -654,7 +627,6 @@
 
                         <img src="/images/samples/sculpture-3.png" />
                     </div>
-                    <!-- // END ILLUSTRATION LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -699,14 +671,8 @@
                     </div>
 
                 </li>
-
                 <li class="rslide-white-info" data-transition="slidevertical">
 
-                    <img src="images/samples/white-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgrepeat="no-repeat">
-
-                    <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
                          data-x="center"
@@ -726,7 +692,6 @@
                         </div>
 
                     </div>
-                    <!-- // END GRID LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
@@ -744,7 +709,6 @@
 
                     </div>
 
-                    <!-- BEGIN ILLUSTRATION LAYER -->
                     <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
                          data-type="image"
@@ -757,7 +721,6 @@
 
                         <img src="/images/samples/sculpture-4.png" />
                     </div>
-                    <!-- // END ILLUSTRATION LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -801,14 +764,8 @@
                     </div>
 
                 </li>
-
                 <li class="rslide-white-info" data-transition="slidevertical">
 
-                    <img src="images/samples/white-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgrepeat="no-repeat">
-
-                    <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
                          data-x="center"
@@ -871,8 +828,6 @@
 
                         </div>
 
-
-                        <!-- BEGIN ILLUSTRATION LAYER -->
                         <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
                              data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-type="image"
@@ -885,10 +840,8 @@
 
                             <img src="/images/samples/sculpture-5.png" />
                         </div>
-                        <!-- // END ILLUSTRATION LAYER -->
 
                     </div>
-                    <!-- // END GRID LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
                          data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
@@ -906,6 +859,7 @@
                     </div>
 
                 </li>
+                -->
 
             </ul>
             <!-- // END FIRST SCREEN SLIDER  -->
