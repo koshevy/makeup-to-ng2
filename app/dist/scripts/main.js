@@ -2,13 +2,15 @@
 jQuery(document).ready(function() {
 
     /* initialize the slider based on the Slider's ID attribute */
-    jQuery('#rev_slider_1').show().revolution({
+    var $api = jQuery('#rev_slider_1').show().revolution({
 
         /* options are 'auto', 'fullwidth' or 'fullscreen' */
         sliderLayout: 'fullscreen',
         stopLoop: 'on',
         stopAfterLoops: 0,
         stopAtSlide: 1,
+        spinner: 'spinner5',
+        lazyType: "smart",
 
         parallax: {
             type: '3D',
@@ -59,5 +61,20 @@ jQuery(document).ready(function() {
                 hide_delay_mobile: 1200
             }
         }
+    });
+
+    $api.on('revolution.slide.onbeforeswap', function(event, data) {
+
+        var slideIndex = data.nextslide.index();
+
+        if(slideIndex>1)
+             $('#main-menu').addClass('menu-dark');
+        else $('#main-menu').removeClass('menu-dark');
+
+        $('#main-menu li').removeClass('active');
+        if(slideIndex < 3) {
+            $($('#main-menu li')[slideIndex]).addClass('active');
+        }
+        else $('li#menu-item-how-we-work').addClass('active');
     });
 });

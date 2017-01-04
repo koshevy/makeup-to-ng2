@@ -163,9 +163,9 @@ body {
 	li{
 		display: inline-block;
 		margin: 0;
-		padding: 0 12px;
+		padding: 0;
 		color: #fff;
-		font-size: 14px;
+		font-size: 16px;
 		text-transform: uppercase;
 		font-family: 'Cinzel';
 		letter-spacing: 1px;
@@ -173,7 +173,8 @@ body {
 		a{
 			display: inline-block;
 			color: #fff;
-			padding: 6px 0px;
+			padding: 0px;
+			margin: 0 12px;
 			cursor: pointer;
 		}
 
@@ -181,6 +182,16 @@ body {
 			border-bottom: 1px solid #fff;
 		}
 	}
+
+	&.menu-dark{
+		background: #15283d;
+
+		li, a{
+			color: #fff;
+		}
+	}
+
+	transition: background-color 1.2s ease-in-out;
 }
 
 .scroll-line,
@@ -269,7 +280,7 @@ body {
 	word-break: normal !important;
 	word-wrap: normal !important;
 	font-size: 15px;
-	color: #bfbfbf;
+	color: #959595;
 }
 
 .service-number{
@@ -283,6 +294,57 @@ body {
 
 .service-name{
 	position: relative;
-	margin-top: -14px;
+	font-family: 'Cinzel';
+	font-size: 22px;
+	margin-top: -18px;
 	z-index: 102;
+}
+
+.tp-loader{
+	width: 256px !important;;
+	height: 256px !important;
+	margin: -128px !important;
+	border-radius: 50% !important;
+	padding: 32px !important;
+
+	background: white url('/images/sculptos-logo-white.png') no-repeat center !important;
+	background-size: 60% !important;
+	box-sizing: border-box !important;
+
+	&:before{
+		content: ' ';
+		display: block;
+		position: absolute;
+		width: 232px;
+		height: 232px;
+		left: 50%;
+		top: 50%;
+		margin-top: -116px;
+		margin-left: -116px;
+		border: 3px solid #eee;
+		border-radius: 50%;
+		box-sizing: border-box;
+	}
+
+	&:after{
+		content: ' ';
+		display: block;
+		position: absolute;
+		width: 232px;
+		height: 232px;
+		left: 50%;
+		top: 50%;
+		margin-top: -116px;
+		margin-left: -116px;
+		border: 3px solid #bbb;
+		border-radius: 50%;
+		box-sizing: border-box;
+		clip: rect(0px,82px,202px,0px);
+
+		animation: 2s rotate360 infinite linear;
+	}
+}
+
+@keyframes rotate360 {
+	to { transform: rotate(360deg); }
 }
