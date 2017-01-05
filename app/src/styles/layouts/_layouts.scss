@@ -199,10 +199,10 @@ body {
 .scroll-line-short,
 .scroll-line-short-dark{
 	display: block;
-	width: 1.2px !important;
-	height: 175px;
+	width: 1.25px !important;
+	height: 145px;
 	background: #fff;
-	margin: 22px auto;
+	margin: 32px auto;
 
 	&.scroll-line-short{
 		height: 80px;
@@ -423,8 +423,8 @@ p{
 input[type="text"]{
 	background: none;
 	border: 0 #1b3d54 solid;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
 	height: 2rem;
 	width: 360px;
 	font-weight: 300;
@@ -486,6 +486,10 @@ button{
 			margin-right: 20px;
 		}
 	}
+}
+
+.ion-mouse{
+	font-size: 40px;
 }
 
 .copyrights{
