@@ -209,9 +209,14 @@ body {
 }
 
 .gray-block{
-	background: #f7f7f7;
-	padding: 52px 0;
+	background: rgba(255,255,255,0.4);
+	padding: 80px 0 52px 0;
 	margin: 0 -1500px;
+}
+
+.gray-block-form{
+	background: rgba(255,255,255,0.4);
+	padding: 52px;
 }
 
 .r-slide-header-back,
@@ -220,9 +225,9 @@ body {
 	font-family: 'Source Sans Pro';
 	font-weight: 300;
 	font-size: 70px;
-	line-height: 120%;
+	line-height: 110%;
 	opacity: 0.2;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	text-transform: uppercase;
 
 	&.r-slide-header-back-dark{
@@ -281,8 +286,16 @@ body {
 	white-space: normal !important;
 	word-break: normal !important;
 	word-wrap: normal !important;
-	font-size: 15px;
+	font-size: 20px;
 	color: #959595;
+
+	ul{
+		padding-left: 1rem;
+
+		li{
+			margin: 0 0 6px 0;
+		}
+	}
 }
 
 .service-number{
@@ -307,7 +320,7 @@ body {
 	border-radius: 50% !important;
 	padding: 32px !important;
 
-	background: white url('/images/sculptos-logo-white.png') no-repeat center !important;
+	background: white url('/images/sculptos-logo-gray.png') no-repeat center !important;
 	background-size: 60% !important;
 	box-sizing: border-box !important;
 
@@ -336,12 +349,85 @@ body {
 		top: 50%;
 		margin-top: -116px;
 		margin-left: -116px;
-		border: 3px solid #bbb;
+		border: 3px solid #777;
 		border-radius: 50%;
 		box-sizing: border-box;
 		clip: rect(0px,82px,202px,0px);
 
 		animation: 2s rotate360 infinite linear;
+	}
+}
+
+p{
+	margin-top: 0;
+	line-height: 140%;
+}
+
+input[type="text"]{
+	background: none;
+	border: 0 #1b3d54 solid;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	height: 2rem;
+	width: 360px;
+	font-weight: 300;
+	margin-bottom: 18px;
+
+	&:focus{
+		outline: none;
+	}
+}
+
+button{
+	background: #1b3d54;
+	padding: 18px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+.dots{
+	display: block;
+	font-size: 22px;
+	font-weight: bold;
+	vertical-align: middle;
+	line-height: 100%;
+}
+
+.footer{
+	color: #fff;
+	background: #1b3d54;
+	padding: 52px 0 72px 0;
+	margin: 0 -1500px;
+	vertical-align: middle;
+
+	> div {
+		text-align: center !important;
+
+		> * {
+			display: inline-block !important;
+			vertical-align: middle;
+		}
+	}
+
+	img.logo{
+		width: 220px !important;
+		height: auto !important;
+	}
+}
+
+.follow-us{
+
+	font-size: 20px;
+	line-height: 140%;
+
+	.socials{
+		font-size: 38px;
+
+		span{
+			display: inline-block;
+			margin-right: 20px;
+		}
 	}
 }
 

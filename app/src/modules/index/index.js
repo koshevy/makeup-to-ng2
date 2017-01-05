@@ -72,9 +72,7 @@ jQuery(document).ready(function() {
         else $('#main-menu').removeClass('menu-dark');
 
         $('#main-menu li').removeClass('active');
-        if(slideIndex < 3) {
-            $($('#main-menu li')[slideIndex]).addClass('active');
-        }
-        else $('li#menu-item-how-we-work').addClass('active');
+        $($('#main-menu li')[slideIndex]).addClass('active');
+
     });
 });

@@ -129,3 +129,16 @@
   font-weight: bold;
   font-style: italic;
 }
+
+/** ******** **/
+/** Ionicons **/
+/** ******** **/
+
+@font-face {
+  font-family: 'Ionicons';
+  src: url('/fonts/Ionicons/ionicons.eot');
+  src:  url('/fonts/Ionicons/ionicons.woff') format('woff'),
+  url('/fonts/Ionicons/ionicons.ttf') format('truetype'), url('/fonts/Ionicons/ionicons.svg') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
