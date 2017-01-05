@@ -75,4 +75,12 @@ jQuery(document).ready(function() {
         $($('#main-menu li')[slideIndex]).addClass('active');
 
     });
+
+    $('.gray-product-form .toggle-detail-info').click(function(){
+        var $productForm = $(this).closest('.gray-product-form');
+        $productForm.find('.preview-info').toggle();
+        $productForm.find('.detail-info').toggle();
+
+        return false;
+    });
 });
