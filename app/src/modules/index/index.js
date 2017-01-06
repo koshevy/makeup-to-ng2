@@ -65,15 +65,25 @@ jQuery(document).ready(function() {
 
     $api.on('revolution.slide.onbeforeswap', function(event, data) {
 
-        var slideIndex = data.nextslide.index();
+        var slideIndex = data.nextslide.index(),
+            menuItemKeyword = $(data.nextslide[0]).attr('data-menu-item');
 
         if(slideIndex>1)
              $('#main-menu').addClass('menu-dark');
         else $('#main-menu').removeClass('menu-dark');
 
         $('#main-menu li').removeClass('active');
-        $($('#main-menu li')[slideIndex]).addClass('active');
+        $('#main-menu li[data-menu-item="'+menuItemKeyword+'"]')
+            .addClass('active');
 
+    });
+
+    $('#main-menu li a').click(function(){
+        var menuItemKeyword = $(this).closest('li').attr('data-menu-item'),
+            slide = $('#rev_slider_1 ul li[data-menu-item="'+menuItemKeyword+'"]');
+
+        $api.revshowslide(slide.index()+1);
+        return false;
     });
 
     $('.gray-product-form .toggle-detail-info').click(function(){

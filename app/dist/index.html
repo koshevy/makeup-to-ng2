@@ -26,11 +26,12 @@
 
     
     <ul id="main-menu">
-        <li class="active"><a>Intro</a>  · </li>
-        <li><a>Who we are</a> · </li>
-        <li><a>What we do</a> · </li>
-        <li><a>Our works</a> · </li>
-        <li><a>Contact us</a></li>
+        <li data-menu-item="index"><a>Intro</a>  · </li>
+        <li data-menu-item="who-we-are"><a>Who we are</a> · </li>
+        <li data-menu-item="what-we-are-do"><a>What we do</a> · </li>
+        <li data-menu-item="our-works"><a>Our works</a> · </li>
+        <li data-menu-item="our-team"><a>Our team</a> · </li>
+        <li data-menu-item="contact-us"><a>Contact us</a></li>
     </ul>
 
     <div class="rev_slider_wrapper fullscreen-container">
@@ -42,7 +43,7 @@
             <ul>
 
                 <!-- BEGIN FIRST SCREEN SLIDER  -->
-                <li id="rslide-main-screen" data-transition="crossfade" data-blendmode=”color-burn“>
+                <li data-menu-item="index" id="rslide-main-screen" data-transition="crossfade" data-blendmode=”color-burn“>
 
                     <!-- BEGIN HTML5 VIDEO LAYER -->
                     <div class="tp-caption tp-resizeme tp-videolayer rs-parallaxlevel-0"
@@ -155,7 +156,7 @@
                 </li>
                 <!-- // END FIRST SCREEN SLIDER  -->
 
-                <li class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
+                <li data-menu-item="who-we-are" class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
                     <img src="images/samples/intro-bg.jpg" class="rev-slidebg">
 
                     <!-- BEGIN OVERLAY LAYER -->
@@ -253,24 +254,25 @@
                     </div>
 
                     <div class="tp-caption rs-parallaxlevel-0"
-                         data-frames='[{"delay": 1000, "speed": 900, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-frames='[{"delay": 2500, "speed": 900, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
                          data-type="text"
                          data-x="left"
                          data-y="top"
-                         data-hoffset="413"
+                         data-hoffset="475"
                          data-voffset="360">
 
                         <div class="scroll-line-short"></div>
 
-                        <a class="r-slide-plain-text-light base-link">
-                            WHAT WE ARE DO
-                        </a>
+                        <div class="arrow-scroll">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
-
 
                 </li>
 
-                <li class="layer-who-we-are-do" data-transition="slidevertical">
+                <li data-menu-item="what-we-are-do" class="layer-what-we-are-do" data-transition="slidevertical">
 
                     <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
 
@@ -393,10 +395,27 @@
 
                     </div>
 
+                    <div class="tp-caption rs-parallaxlevel-4"
+                         data-frames='[{"delay": 2500, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-type="text"
+                         data-x="right"
+                         data-y="top"
+                         data-hoffset="280"
+                         data-voffset="-10">
+
+                        <div class="scroll-line-short"></div>
+
+                        <div class="mouse center-block"></div>
+                        <div class="arrow-scroll">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
 
                 </li>
 
-                <li class="product-case" data-transition="fade">
+                <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
                     <img    src="/images/samples/cases/belo-grandola-book.jpg"
                             alt="Belo Grandola brand"
@@ -508,7 +527,7 @@
 
                 </li>
 
-                <li class="product-case" data-transition="fade">
+                <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
                     <img    src="/images/samples/cases/cnl-studio.jpg"
                             alt="Cnl Tv Studio"
@@ -618,7 +637,7 @@
 
                 </li>
 
-                <li class="product-case" data-transition="fade">
+                <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
                     <img
                             src="/images/samples/cases/sacramento-studio-2.jpg"
@@ -729,7 +748,7 @@
 
                 </li>
 
-                <li class="layer-who-we-are-do" data-transition="fade">
+                <li data-menu-item="our-works" class="products-more" data-transition="fade">
 
                     <img
                             src="/images/samples/cases/sacramento-studio-2.jpg"
@@ -833,7 +852,7 @@
 
                 </li>
 
-                <li class="layer-our-team" data-transition="slidevertical">
+                <li data-menu-item="our-team" class="layer-our-team" data-transition="slidevertical">
 
                     <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
 
@@ -929,7 +948,7 @@
                                 <td width="33%">
                                     <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alexander.jpg')">
                                         <div class="description">
-                                            <h4>Alexander<br>Koshevoy</h4>
+                                            <h4>Alexander<br>Koshevy</h4>
                                             <span>Web Development Director</span>
                                         </div>
                                     </div>
@@ -957,7 +976,7 @@
 
                 </li>
 
-                <li class="layer-lets-work-together" data-transition="slidevertical">
+                <li data-menu-item="contact-us" class="layer-lets-work-together" data-transition="slidevertical">
 
                     <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
 
