@@ -26,18 +26,23 @@
 
     
     <ul id="main-menu">
+        <li class="menu-logo">
+            <a>
+                <img src="/images/sculptos-logo.png" />
+            </a>
+        </li>
         <li data-menu-item="index"><a>Intro</a>  · </li>
         <li data-menu-item="who-we-are"><a>Who we are</a> · </li>
         <li data-menu-item="what-we-are-do"><a>What we do</a> · </li>
-        <li data-menu-item="our-works"><a>Our works</a> · </li>
-        <li data-menu-item="our-team"><a>Our team</a> · </li>
-        <li data-menu-item="contact-us"><a>Contact us</a></li>
+        <li data-menu-item="our-works"><a>Our work</a> · </li>
+        <li data-menu-item="our-team"><a>Team</a> · </li>
+        <li data-menu-item="contact-us"><a>Connect</a></li>
     </ul>
 
     <div class="rev_slider_wrapper fullscreen-container">
 
         <!-- the ID here will be used in the JavaScript below to initialize the slider -->
-        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none">
+        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none; min-width: 1100px">
 
             <!-- BEGIN MAIN SLIDE LIST -->
             <ul>
@@ -46,7 +51,8 @@
                 <li data-menu-item="index" id="rslide-main-screen" data-transition="crossfade" data-blendmode=”color-burn“>
 
                     <!-- BEGIN HTML5 VIDEO LAYER -->
-                    <div class="tp-caption tp-resizeme tp-videolayer rs-parallaxlevel-0"
+
+                    <div id="layer-main-video" class="tp-caption tp-resizeme tp-videolayer rs-parallaxlevel-0"
 
                          data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
 
@@ -61,103 +67,137 @@
                          data-videoloop="none"
                          data-allowfullscreenvideo="true"
                          data-videopreload="auto"
+                         data-volume="mute"
 
                          data-x="center"
                          data-y="center"
                          data-hoffset="0"
                          data-voffset="0"
                          data-basealign="slide">
+                    </div>
 
-                        <div>
+                    <!-- BEGIN OVERLAY LAYER -->
+                    <div class="layer-overlay tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 1000, "speed": 500, "from": "opacity: 0", "to": "opacity: 0.5"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-width="100%"
+                         data-height="1500">
 
-                            <!-- BEGIN OVERLAY LAYER -->
-                            <div class="layer-overlay tp-caption tp-resizeme rs-parallaxlevel-0"
-                                 data-frames='[{"delay": 1000, "speed": 500, "from": "opacity: 0", "to": "opacity: 0.5"}]'
-                                 data-x="center"
-                                 data-y="center"
-                                 data-hoffset="0"
-                                 data-voffset="0"
-                                 data-width="100%"
-                                 data-height="1500">
+                    </div>
+                    <!-- // END OVERLAY LAYER -->
 
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 1000, "speed": 2500, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
                             </div>
-                            <!-- // END OVERLAY LAYER -->
+                        </div>
 
-                            <!-- BEGIN GRID LAYER -->
-                            <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-10"
-                                 data-frames='[{"delay": 1000, "speed": 2500, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                                 data-x="center"
-                                 data-y="center"
-                                 data-hoffset="0"
-                                 data-voffset="0"
-                                 data-height="1500">
+                    </div>
+                    <!-- // END GRID LAYER -->
 
-                                <div class="v-lines">
-                                    <div class="v-wrap">
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                    </div>
-                                </div>
+                    <!-- BEGIN VOLUME LAYER -->
+                    <div id="layer-volume" class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]]'
+                         data-type="text"
+                         data-x="right"
+                         data-y="top"
+                         data-hoffset="-75"
+                         data-voffset="0"
+                         data-height="auto"
+                         data-actions='[{
+                                "event"  : "click",
+                                "action" : "toggle_mute_video",
+                                "layer"  : "layer-main-video",
+                                "delay"  : "100"
+                            },{
+                                "event"  : "click",
+                                "action" : "toggleclass",
+                                "layer"  : "layer-volume",
+                                "classname": "volume-on",
+                                "delay"  : "0"
+                            }]'>
 
-                            </div>
-                            <!-- // END GRID LAYER -->
+                        <div class="volume-switch">
+                            <i class="ion-android-volume-off">
+                            </i>
+                            <i class="ion-android-volume-up">
+                            </i>
+                        </div>
 
-                            <!-- BEGIN LOGO LAYER -->
-                            <div class="layer-logo tp-caption tp-resizeme rs-parallaxlevel-0"
-                                 data-frames='[{"delay":1200,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                 data-type="image"
-                                 data-x="center"
-                                 data-y="top"
-                                 data-hoffset="0"
-                                 data-voffset="45"
-                                 data-width="320"
-                                 data-height="auto">
-                                <img src="/images/sculptos-logo.png" alt="Sculptos Logo">
-                            </div>
-                            <!-- // END LOGO LAYER -->
+                    </div>
+                    <!-- // END VOLUME LAYER -->
 
-                            <div class="layer-description tp-caption rs-parallaxlevel-10"
-                                 data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"opacity:0.1;x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"opacity:1;x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                 data-type="text"
-                                 data-x="center"
-                                 data-y="top"
-                                 data-hoffset="0"
-                                 data-voffset="120">
+                    <!-- BEGIN LOGO LAYER -->
+                    <div class="layer-logo tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay":1200,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="45"
+                         data-width="320"
+                         data-height="auto">
+                        <img src="/images/sculptos-logo.png" alt="Sculptos Logo">
+                    </div>
+                    <!-- // END LOGO LAYER -->
 
-                                WE ARE<br>
-                                STRATEGISTS · ANALYTICS<br>
-                                DEVELOPERS · CREATIVE MINDS<br>
-                                CONNECTED TOGETHER TO BRING<br>
-                                INNOVATIVE IDEAS TO LIFE<br>
+                    <div class="layer-description tp-caption rs-parallaxlevel-10"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"opacity:0.1;x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"opacity:1;x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-type="text"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="120">
 
-                            </div>
+                        WE ARE<br>
+                        STRATEGISTS · DEVELOPERS · <br>
+                        AND CREATIVE MINDS · <br>
+                        CONNECTED TOGETHER TO BRING<br>
+                        INNOVATIVE IDEAS TO LIFE<br>
 
-                            <div class="tp-caption rs-parallaxlevel-4"
-                                 data-frames='[{"delay": 3300, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
-                                 data-type="text"
-                                 data-x="center"
-                                 data-y="top"
-                                 data-hoffset="0"
-                                 data-voffset="280">
+                    </div>
 
-                                <div class="scroll-line"></div>
+                    <div class="tp-caption rs-parallaxlevel-4"
+                         data-frames='[{"delay": 3300, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-type="text"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="280">
 
-                                <div class="mouse center-block"></div>
-                                <div class="arrow-scroll">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
+                        <div class="scroll-line"></div>
+
+                        <div class="mouse center-block"></div>
+                        <div class="arrow-scroll">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
 
                 </li>
                 <!-- // END FIRST SCREEN SLIDER  -->
 
                 <li data-menu-item="who-we-are" class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
-                    <img src="images/samples/intro-bg.jpg" class="rev-slidebg">
+                    <img data-lazyload="images/samples/intro-bg.jpg"
+                         src="assets/images/transparent.png"
+                         class="rev-slidebg" >
 
                     <!-- BEGIN OVERLAY LAYER -->
                     <div class="layer-overlay tp-caption tp-resizeme"
@@ -215,8 +255,9 @@
                          data-voffset="-210">
 
                         <div class="r-slide-header-front">
-                            SCULPTOS is independent creative agency<br/>
-                            specializing in brand strategy.
+                            We sculpt good brands, sketch strategic<br/>
+                            direction while propel creative campaigns<br/>
+                            to actual sales
                         </div>
 
                     </div>
@@ -226,12 +267,14 @@
                          data-x="left"
                          data-y="center"
                          data-hoffset="385"
-                         data-voffset="-90">
+                         data-voffset="-60">
 
                         <div class="r-slide-plain-text-light">
-                            We bring brands to life by sculpting innovative products,<br/>
-                            sketching strategic direction while propelling creative<br/>
-                            campaigns to actual sales.
+                            <strong>IMAGEINE</strong>, there are millions of blocks of stones.<br>
+                            But only one is worth of Sculptor’s attention. He envisioned <br>
+                            the most beautiful essence of object with pencil on paper. Then,<br>
+                            through long cutting pain, lots of dust and thoughts a brilliant<br>
+                            Sculpture eventually finds its life shape.<br>
                         </div>
 
                     </div>
@@ -241,14 +284,13 @@
                          data-x="left"
                          data-y="center"
                          data-hoffset="385"
-                         data-voffset="30">
+                         data-voffset="60">
 
                         <div class="r-slide-plain-text-light">
-                            That carving methods helped startups, corporations and<br/>
-                            numerous companies to impact globally and make our<br/>
-                            lives better. Agency is located in San Diego, CA and<br/>
-                            unites community of brand sculptors, creative artists<br/>
-                            and developers.
+                            That’s called the <strong>BRAND</strong>.<br>
+
+                            It’s carefully crafted to fulfill special astonishing mission — <br>
+                            <strong>MAKE HUMAN LIVES BETTER</strong>.
                         </div>
 
                     </div>
@@ -305,11 +347,9 @@
                          data-hoffset="0"
                          data-voffset="-180">
 
-                        <div class="layer-at-grid">
-                            <div class="r-slide-header-back-dark">
-                                WHAT WE<br/>
-                                ARE DO
-                            </div>
+                        <div class="r-slide-header-back-dark">
+                            WHAT
+                            WE DO
                         </div>
 
                     </div>
@@ -331,57 +371,56 @@
                                             <td width="33%" valign="top">
                                                 <span class="service-number">I</span>
                                                 <h3 class="service-name">
-                                                    Brand sculpting
+                                                    Brand Sculpting
                                                 </h3>
                                                 <div class="service-description">
                                                     We bring brands to life by carving  its’
-                                                    strategy, direc-tion, vision and communica-tion
-                                                    plans, & sculpt in beauti-ful form and image.
+                                                    strategy, direction, vision and communication
+                                                    plans, & sculpt in beautiful form and image.
                                                 </div>
                                                 <div class="service-items">
                                                     <ul>
-                                                        <li>Brand creation</li>
-                                                        <li>Brand recreation</li>
-                                                        <li>Brand positionning & communicatio</li>
-                                                        <li>Brand essence</li>
+                                                        <li>Brand Creation</li>
+                                                        <li>Brand Recreation</li>
+                                                        <li>Brand Positioning & Communication</li>
+                                                        <li>Brand Essence</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td width="33%" valign="top">
                                                 <span class="service-number">II</span>
                                                 <h3 class="service-name">
-                                                    Product sculpting
+                                                    Product Sculpting
                                                 </h3>
                                                 <div class="service-description">
                                                     We innovate, create, optimize risks, tell stories,
-                                                    plan new invasions to coun-tries, markets and
+                                                    plan new invasions to countries, markets and
                                                     retail. We design products that make lives better.
                                                 </div>
                                                 <div class="service-items">
                                                     <ul>
-                                                        <li>New product innovation</li>
-                                                        <li>New product line in existing brand family</li>
-                                                        <li>Product planning on market invassion</li>
-                                                        <li>Product communication</li>
+                                                        <li>New product Innovation</li>
+                                                        <li>New Product Line in Existing Brand Family</li>
+                                                        <li>Product Planning on Market Invasion</li>
+                                                        <li>Product Communication</li>
                                                     </ul>
                                                 </div>
                                             </td>
                                             <td width="33%" valign="top">
                                                 <span class="service-number">III</span>
                                                 <h3 class="service-name">
-                                                    Experience sculpting
+                                                    Experience Sculpting
                                                 </h3>
                                                 <div class="service-description">
                                                     We attract consumers, make them feel the brand,
                                                     educate teams about branding and experiment with
-                                                    new technolo-gies.
+                                                    new technologies.
                                                 </div>
                                                 <div class="service-items">
                                                     <ul>
-                                                        <li>Retail / spaice experience</li>
-                                                        <li>Vertual reality experience</li>
-                                                        <li>Degital presence</li>
-                                                        <li>Workshops and brand labs</li>
+                                                        <li>Retail / Space Experience</li>
+                                                        <li>Digital Presence</li>
+                                                        <li>Workshops and Brand Labs</li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -395,30 +434,13 @@
 
                     </div>
 
-                    <div class="tp-caption rs-parallaxlevel-4"
-                         data-frames='[{"delay": 2500, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
-                         data-type="text"
-                         data-x="right"
-                         data-y="top"
-                         data-hoffset="280"
-                         data-voffset="-10">
-
-                        <div class="scroll-line-short"></div>
-
-                        <div class="mouse center-block"></div>
-                        <div class="arrow-scroll">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-
                 </li>
 
                 <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
-                    <img    src="/images/samples/cases/belo-grandola-book.jpg"
-                            alt="Belo Grandola brand"
+                    <img    src="assets/images/transparent.png"
+                            data-lazyload="/images/samples/cases/belo-grandola-all-in-one.jpg"
+                            alt="Belo Granola brand"
                             class="rev-slidebg"
                             data-bgposition="center center"
                             data-bgfit="cover"
@@ -484,14 +506,14 @@
                                     <div class="product-category">
                                         Brand Sculpting / Product Sculpting
                                     </div>
-                                    <h2>Belo Grandola</h2>
+                                    <h2>Belo Granola</h2>
                                     <p>
                                         Flavors development, Brand Audit, Packaging,
                                         Identity and Guidelines, Brand Strategy,
                                         Communication Kick-Off Plan
                                     </p>
                                     <a class="toggle-detail-info">
-                                        Detail about this case
+                                        Explore
                                     </a>
 
                                 </div>
@@ -514,9 +536,55 @@
                                         required sales print and digital collateral.
                                     </p>
 
-                                    <a class="toggle-detail-info">
-                                        Back
-                                    </a>
+                                    <div class="project-navigation">
+                                        <a class="toggle-detail-info">
+                                            <span class="ion-android-arrow-dropleft"></span>
+                                            &nbsp;Back
+                                        </a>
+                                        &nbsp; &nbsp; | &nbsp; &nbsp;
+                                        <a class="toggle-detail-gallery">
+                                            Gallery&nbsp;
+                                            <span class="ion-android-arrow-dropright"></span>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="detail-gallery">
+                                    <h3>Gallery</h3>
+
+                                    <p>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td width="33%">
+                                                <div data-large-image="/images/samples/cases/belo-grandola-all-in-one.jpg"
+                                                     class="gallery-item grayscale"
+                                                     style="background-image: url('/images/samples/cases/previews/belo-grandola-all-in-one.jpg')">
+                                                </div>
+                                            </td>
+                                            <td width="33%">
+                                                <div data-large-image="/images/samples/cases/belo-grandola-book.jpg"
+                                                     class="gallery-item grayscale"
+                                                     style="background-image: url('/images/samples/cases/previews/belo-grandola-book.jpg')">
+                                                </div>
+                                            </td>
+                                            <td width="33%">
+                                                <div data-large-image="/images/samples/cases/belo-grandola-packages.jpg"
+                                                     class="gallery-item grayscale"
+                                                     style="background-image: url('/images/samples/cases/previews/belo-grandola-packages.jpg')">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </p>
+
+                                    <div class="project-navigation">
+                                        <a class="toggle-detail-gallery">
+                                            <span class="ion-android-arrow-dropleft"></span>
+                                            &nbsp;Back
+                                        </a>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -602,7 +670,7 @@
                                         conducting daily live broadcasts
                                     </p>
                                     <a class="toggle-detail-info">
-                                        Detail about this case
+                                        Explore
                                     </a>
 
                                 </div>
@@ -713,7 +781,7 @@
                                         conducting daily live broadcasts
                                     </p>
                                     <a class="toggle-detail-info">
-                                        Detail about this case
+                                        Explore
                                     </a>
 
                                 </div>
@@ -904,7 +972,7 @@
                         <table cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/polina.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/polina.jpg')">
                                         <div class="description">
                                             <h4>Polina<br>Art</h4>
                                             <span>Founder, Brand Sculptor</span>
@@ -912,7 +980,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alex.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/alex.jpg')">
                                         <div class="description">
                                             <h4>Alex<br>Maximov</h4>
                                             <span>Technical/Production Director</span>
@@ -920,7 +988,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/lena.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/lena.jpg')">
                                         <div class="description">
                                             <h4>Lena<br>Pozdnyakova </h4>
                                             <span>Lead Designer</span>
@@ -930,7 +998,7 @@
                             </tr>
                             <tr>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/tatyana.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/tatyana.jpg')">
                                         <div class="description">
                                             <h4>Tatyana<br>Kim</h4>
                                             <span>Art Director</span>
@@ -938,7 +1006,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/kamilla.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/kamilla.jpg')">
                                         <div class="description">
                                             <h4>Kamila<br>Pletneva</h4>
                                             <span>Strategic Planner</span>
@@ -946,7 +1014,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alexander.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/alexander.jpg')">
                                         <div class="description">
                                             <h4>Alexander<br>Koshevy</h4>
                                             <span>Web Development Director</span>
@@ -956,7 +1024,7 @@
                             </tr>
                             <tr>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/fumi.jpeg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/fumi.jpeg')">
                                         <div class="description">
                                             <h4>Fumi<br>Matsubara</h4>
                                             <span>Digital Expert</span>
@@ -964,7 +1032,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate">
+                                    <div class="gallery-item">
                                         Wanna be<br>
                                         a new<br>
                                         teammate?

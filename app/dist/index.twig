@@ -26,26 +26,33 @@
 
     
     <ul id="main-menu">
-        <li class="active"><a>Intro</a>  · </li>
-        <li><a>Who we are</a> · </li>
-        <li><a>What we do</a> · </li>
-        <!--<li><a>Our works</a> · </li>-->
-        <li><a>Contact us</a></li>
+        <li class="menu-logo">
+            <a>
+                <img src="/images/sculptos-logo.png" />
+            </a>
+        </li>
+        <li data-menu-item="index"><a>Intro</a>  · </li>
+        <li data-menu-item="who-we-are"><a>Who we are</a> · </li>
+        <li data-menu-item="what-we-are-do"><a>What we do</a> · </li>
+        <li data-menu-item="our-works"><a>Our work</a> · </li>
+        <li data-menu-item="our-team"><a>Team</a> · </li>
+        <li data-menu-item="contact-us"><a>Connect</a></li>
     </ul>
 
     <div class="rev_slider_wrapper fullscreen-container">
 
         <!-- the ID here will be used in the JavaScript below to initialize the slider -->
-        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none">
+        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none; min-width: 1100px">
 
             <!-- BEGIN MAIN SLIDE LIST -->
             <ul>
 
                 <!-- BEGIN FIRST SCREEN SLIDER  -->
-                <li id="rslide-main-screen" data-transition="crossfade" data-blendmode=”color-burn“>
+                <li data-menu-item="index" id="rslide-main-screen" data-transition="crossfade" data-blendmode=”color-burn“>
 
                     <!-- BEGIN HTML5 VIDEO LAYER -->
-                    <div class="tp-caption tp-resizeme tp-videolayer rs-parallaxlevel-0"
+
+                    <div id="layer-main-video" class="tp-caption tp-resizeme tp-videolayer rs-parallaxlevel-0"
 
                          data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
 
@@ -60,6 +67,7 @@
                          data-videoloop="none"
                          data-allowfullscreenvideo="true"
                          data-videopreload="auto"
+                         data-volume="mute"
 
                          data-x="center"
                          data-y="center"
@@ -67,90 +75,127 @@
                          data-voffset="0"
                          data-basealign="slide">
 
-                        <div>
+                    <div>
 
-                            <!-- BEGIN OVERLAY LAYER -->
-                            <div class="layer-overlay tp-caption tp-resizeme rs-parallaxlevel-0"
-                                 data-frames='[{"delay": 1000, "speed": 500, "from": "opacity: 0", "to": "opacity: 0.5"}]'
-                                 data-x="center"
-                                 data-y="center"
-                                 data-hoffset="0"
-                                 data-voffset="0"
-                                 data-width="100%"
-                                 data-height="1500">
+                    <!-- BEGIN OVERLAY LAYER -->
+                    <div class="layer-overlay tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 1000, "speed": 500, "from": "opacity: 0", "to": "opacity: 0.5"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-width="100%"
+                         data-height="1500">
 
+                    </div>
+                    <!-- // END OVERLAY LAYER -->
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-10"
+                         data-frames='[{"delay": 1000, "speed": 2500, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
                             </div>
-                            <!-- // END OVERLAY LAYER -->
+                        </div>
 
-                            <!-- BEGIN GRID LAYER -->
-                            <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-10"
-                                 data-frames='[{"delay": 1000, "speed": 2500, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                                 data-x="center"
-                                 data-y="center"
-                                 data-hoffset="0"
-                                 data-voffset="0"
-                                 data-height="1500">
+                    </div>
+                    <!-- // END GRID LAYER -->
 
-                                <div class="v-lines">
-                                    <div class="v-wrap">
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                        <div class="v-column"></div>
-                                    </div>
-                                </div>
+                    <!-- BEGIN VOLUME LAYER -->
+                    <div id="layer-volume" class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]]'
+                         data-type="text"
+                         data-x="right"
+                         data-y="top"
+                         data-hoffset="-75"
+                         data-voffset="0"
+                         data-height="auto"
+                         data-actions='[{
+                                "event"  : "click",
+                                "action" : "toggle_mute_video",
+                                "layer"  : "layer-main-video",
+                                "delay"  : "100"
+                            },{
+                                "event"  : "click",
+                                "action" : "toggleclass",
+                                "layer"  : "layer-volume",
+                                "classname": "volume-on",
+                                "delay"  : "0"
+                            }]'>
 
-                            </div>
-                            <!-- // END GRID LAYER -->
+                        <div class="volume-switch">
+                            <i class="ion-android-volume-off">
+                            </i>
+                            <i class="ion-android-volume-up">
+                            </i>
+                        </div>
 
-                            <!-- BEGIN LOGO LAYER -->
-                            <div class="layer-logo tp-caption tp-resizeme rs-parallaxlevel-0"
-                                 data-frames='[{"delay":1200,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                 data-type="image"
-                                 data-x="center"
-                                 data-y="top"
-                                 data-hoffset="0"
-                                 data-voffset="45"
-                                 data-width="320"
-                                 data-height="auto">
-                                <img src="/images/sculptos-logo.png" alt="Sculptos Logo">
-                            </div>
-                            <!-- // END LOGO LAYER -->
+                    </div>
+                    <!-- // END VOLUME LAYER -->
 
-                            <div class="layer-description tp-caption rs-parallaxlevel-10"
-                                 data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"opacity:0.1;x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"opacity:1;x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                 data-type="text"
-                                 data-x="center"
-                                 data-y="top"
-                                 data-hoffset="0"
-                                 data-voffset="120">
+                    <!-- BEGIN LOGO LAYER -->
+                    <div class="layer-logo tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay":1200,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="45"
+                         data-width="320"
+                         data-height="auto">
+                        <img src="/images/sculptos-logo.png" alt="Sculptos Logo">
+                    </div>
+                    <!-- // END LOGO LAYER -->
 
-                                WE ARE<br>
-                                STRATEGISTS · ANALYTICS<br>
-                                DEVELOPERS · CREATIVE MINDS<br>
-                                CONNECTED TOGETHER TO BRING<br>
-                                INNOVATIVE IDEAS TO LIFE<br>
+                    <div class="layer-description tp-caption rs-parallaxlevel-10"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"opacity:0.1;x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"opacity:1;x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-type="text"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="120">
 
-                            </div>
+                        WE ARE<br>
+                        STRATEGISTS · DEVELOPERS · <br>
+                        AND CREATIVE MINDS · <br>
+                        CONNECTED TOGETHER TO BRING<br>
+                        INNOVATIVE IDEAS TO LIFE<br>
 
-                            <div class="tp-caption rs-parallaxlevel-4"
-                                 data-frames='[{"delay": 3300, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
-                                 data-type="text"
-                                 data-x="center"
-                                 data-y="top"
-                                 data-hoffset="0"
-                                 data-voffset="280">
+                    </div>
 
-                                <div class="scroll-line"></div>
+                    <div class="tp-caption rs-parallaxlevel-4"
+                         data-frames='[{"delay": 3300, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-type="text"
+                         data-x="center"
+                         data-y="top"
+                         data-hoffset="0"
+                         data-voffset="280">
 
-                                <a class="r-slide-plain-text-light base-link">SKIP INTRO</a>
-                            </div>
+                        <div class="scroll-line"></div>
+
+                        <div class="mouse center-block"></div>
+                        <div class="arrow-scroll">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
 
                 </li>
                 <!-- // END FIRST SCREEN SLIDER  -->
 
-                <li class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
+                <li data-menu-item="who-we-are" class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
                     <img src="images/samples/intro-bg.jpg" class="rev-slidebg">
 
                     <!-- BEGIN OVERLAY LAYER -->
@@ -193,14 +238,12 @@
                          data-y="center"
                          data-hoffset="0"
                          data-voffset="-180">
-
                         <div class="layer-at-grid">
                             <div class="r-slide-header-back">
                                 BORN TO<br/>
                                 CREATE
                             </div>
                         </div>
-
                     </div>
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
@@ -211,8 +254,9 @@
                          data-voffset="-210">
 
                         <div class="r-slide-header-front">
-                            SCULPTOS is independent creative agency<br/>
-                            specializing in brand strategy.
+                            We sculpt good brands, sketch strategic<br/>
+                            direction while propel creative campaigns<br/>
+                            to actual sales
                         </div>
 
                     </div>
@@ -222,12 +266,14 @@
                          data-x="left"
                          data-y="center"
                          data-hoffset="385"
-                         data-voffset="-90">
+                         data-voffset="-60">
 
                         <div class="r-slide-plain-text-light">
-                            We bring brands to life by sculpting innovative products,<br/>
-                            sketching strategic direction while propelling creative<br/>
-                            campaigns to actual sales.
+                            <strong>IMAGEINE</strong>, there are millions of blocks of stones.<br>
+                            But only one is worth of Sculptor’s attention. He envisioned <br>
+                            the most beautiful essence of object with pencil on paper. Then,<br>
+                            through long cutting pain, lots of dust and thoughts a brilliant<br>
+                            Sculpture eventually finds its life shape.<br>
                         </div>
 
                     </div>
@@ -237,38 +283,37 @@
                          data-x="left"
                          data-y="center"
                          data-hoffset="385"
-                         data-voffset="30">
+                         data-voffset="60">
 
                         <div class="r-slide-plain-text-light">
-                            That carving methods helped startups, corporations and<br/>
-                            numerous companies to impact globally and make our<br/>
-                            lives better. Agency is located in San Diego, CA and<br/>
-                            unites community of brand sculptors, creative artists<br/>
-                            and developers.
+                            That’s called the <strong>BRAND</strong>.<br>
+
+                            It’s carefully crafted to fulfill special astonishing mission — <br>
+                            <strong>MAKE HUMAN LIVES BETTER</strong>.
                         </div>
 
                     </div>
 
                     <div class="tp-caption rs-parallaxlevel-0"
-                         data-frames='[{"delay": 1000, "speed": 900, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                         data-frames='[{"delay": 2500, "speed": 900, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
                          data-type="text"
                          data-x="left"
                          data-y="top"
-                         data-hoffset="413"
+                         data-hoffset="475"
                          data-voffset="360">
 
                         <div class="scroll-line-short"></div>
 
-                        <a class="r-slide-plain-text-light base-link">
-                            WHAT WE ARE DO
-                        </a>
-
+                        <div class="arrow-scroll">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
-
 
                 </li>
 
-                <li class="layer-who-we-are" data-transition="slidevertical">
+                <li data-menu-item="what-we-are-do" class="layer-what-we-are-do" data-transition="slidevertical">
 
                     <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
 
@@ -301,11 +346,9 @@
                          data-hoffset="0"
                          data-voffset="-180">
 
-                        <div class="layer-at-grid">
-                            <div class="r-slide-header-back-dark">
-                                WHAT WE<br/>
-                                ARE DO
-                            </div>
+                        <div class="r-slide-header-back-dark">
+                            WHAT
+                            WE DO
                         </div>
 
                     </div>
@@ -315,7 +358,7 @@
                          data-x="center"
                          data-y="bottom"
                          data-hoffset="0"
-                         data-voffset="0">
+                         data-voffset="-40">
 
                         <div class="layer-at-grid">
                             <div class="gray-block">
@@ -327,48 +370,57 @@
                                             <td width="33%" valign="top">
                                                 <span class="service-number">I</span>
                                                 <h3 class="service-name">
-                                                    Brand sculpting
+                                                    Brand Sculpting
                                                 </h3>
                                                 <div class="service-description">
                                                     We bring brands to life by carving  its’
-                                                    strategy, direc-tion, vision and communica-tion
-                                                    plans, & sculpt in beauti-ful form and image.
-                                                    We rede-sign and remodel brands to uncover its
-                                                    new opportunities to live.
+                                                    strategy, direction, vision and communication
+                                                    plans, & sculpt in beautiful form and image.
                                                 </div>
                                                 <div class="service-items">
-                                                    Brand creation | Brand recreation |
-                                                    Brand positionning & communicatio | Brand essence
+                                                    <ul>
+                                                        <li>Brand Creation</li>
+                                                        <li>Brand Recreation</li>
+                                                        <li>Brand Positioning & Communication</li>
+                                                        <li>Brand Essence</li>
+                                                    </ul>
                                                 </div>
                                             </td>
                                             <td width="33%" valign="top">
                                                 <span class="service-number">II</span>
                                                 <h3 class="service-name">
-                                                    Product sculpting
+                                                    Product Sculpting
                                                 </h3>
                                                 <div class="service-description">
                                                     We innovate, create, optimize risks, tell stories,
-                                                    plan new invasions to coun-tries, markets and
+                                                    plan new invasions to countries, markets and
                                                     retail. We design products that make lives better.
                                                 </div>
                                                 <div class="service-items">
-                                                    New product innovation | New product line in existing brand family |
-                                                    Product planning on market invassion | Product communication
+                                                    <ul>
+                                                        <li>New product Innovation</li>
+                                                        <li>New Product Line in Existing Brand Family</li>
+                                                        <li>Product Planning on Market Invasion</li>
+                                                        <li>Product Communication</li>
+                                                    </ul>
                                                 </div>
                                             </td>
                                             <td width="33%" valign="top">
                                                 <span class="service-number">III</span>
                                                 <h3 class="service-name">
-                                                    Experience sculpting
+                                                    Experience Sculpting
                                                 </h3>
                                                 <div class="service-description">
                                                     We attract consumers, make them feel the brand,
                                                     educate teams about branding and experiment with
-                                                    new technolo-gies.
+                                                    new technologies.
                                                 </div>
                                                 <div class="service-items">
-                                                    Retail / spaice experience | Vertual reality experience |
-                                                    Degital presence | Workshops and brand labs
+                                                    <ul>
+                                                        <li>Retail / Space Experience</li>
+                                                        <li>Digital Presence</li>
+                                                        <li>Workshops and Brand Labs</li>
+                                                    </ul>
                                                 </div>
                                             </td>
                                         </tr>
@@ -381,10 +433,648 @@
 
                     </div>
 
+                </li>
+
+                <li data-menu-item="our-works" class="product-case" data-transition="fade">
+
+                    <img    src="/images/samples/cases/belo-grandola-all-in-one.jpg"
+                            alt="Belo Granola brand"
+                            class="rev-slidebg"
+                            data-bgposition="center center"
+                            data-bgfit="cover"
+                            data-bgrepeat="no-repeat"
+
+                            data-kenburns="on"
+                            data-duration="18000"
+                            data-ease="Linear.easeNone"
+                            data-scalestart="100"
+                            data-scaleend="120"
+                            data-offsetstart="0 0"
+                            data-offsetend="0 0"
+                            data-rotatestart="0"
+                            data-rotateend="0">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-3"
+                         data-frames='[{"delay": 700, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 1200, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-dark-contrast">
+                                OUR<br>
+                                WORKS
+                            </div>
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                             data-frames='[{"delay":400,"speed":900,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-x="right"
+                             data-y="top"
+                             data-hoffset="1"
+                             data-voffset="0"
+                             data-width="580">
+
+                            <div class="gray-product-form">
+
+                                <div class="preview-info">
+                                    <div class="product-category">
+                                        Brand Sculpting / Product Sculpting
+                                    </div>
+                                    <h2>Belo Granola</h2>
+                                    <p>
+                                        Flavors development, Brand Audit, Packaging,
+                                        Identity and Guidelines, Brand Strategy,
+                                        Communication Kick-Off Plan
+                                    </p>
+                                    <a class="toggle-detail-info">
+                                        Explore
+                                    </a>
+
+                                </div>
+
+                                <div class="detail-info">
+                                    <h3>Challenge</h3>
+                                    <p>
+                                        Belo Granola is young company specializing in production of seven different flavors of granola.
+                                        By the way, very delicious! Market is very saturated and granola trend was decreasing for the
+                                        last couple of years. BELO is struggling to create product that will stand up among competitors
+                                        on grocery shelves, farmers markets and small boutiques and mainly will tell consumers about
+                                        unique flavors and culture of the company and its eco-principles.
+                                    </p>
+
+                                    <h3>Result</h3>
+                                    <p>
+                                        SCULPTOS team developed unique concept of brand and overall strategy for later morning
+                                        products line expansion. Now Belo Granola has a vision how to jumpstart through detailed
+                                        Marketing plan.We also created eco and kids-friendly packaging and design for all seven flavors,
+                                        required sales print and digital collateral.
+                                    </p>
+
+                                    <div class="project-navigation">
+                                        <a class="toggle-detail-info">
+                                            <span class="ion-ios-arrow-left"></span>
+                                            &nbsp;Back
+                                        </a>
+                                        &nbsp; &nbsp; | &nbsp; &nbsp;
+                                        <a class="toggle-detail-gallery">
+                                            Gallery&nbsp;
+                                            <span class="ion-android-arrow-dropright"></span>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="detail-gallery">
+                                    <h3>Gallery</h3>
+
+                                    <p>
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td width="33%">
+                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/polina.jpg')">
+                                                    <div class="description">
+                                                        <h4>Polina<br>Art</h4>
+                                                        <span>Founder, Brand Sculptor</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td width="33%">
+                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alex.jpg')">
+                                                    <div class="description">
+                                                        <h4>Alex<br>Maximov</h4>
+                                                        <span>Technical/Production Director</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td width="33%">
+                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/lena.jpg')">
+                                                    <div class="description">
+                                                        <h4>Lena<br>Pozdnyakova </h4>
+                                                        <span>Lead Designer</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%">
+                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/tatyana.jpg')">
+                                                    <div class="description">
+                                                        <h4>Tatyana<br>Kim</h4>
+                                                        <span>Art Director</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td width="33%">
+                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/kamilla.jpg')">
+                                                    <div class="description">
+                                                        <h4>Kamila<br>Pletneva</h4>
+                                                        <span>Strategic Planner</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td width="33%">
+                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alexander.jpg')">
+                                                    <div class="description">
+                                                        <h4>Alexander<br>Koshevy</h4>
+                                                        <span>Web Development Director</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </p>
+
+                                    <div class="project-navigation">
+                                        <a class="toggle-detail-gallery">
+                                            <span class="ion-android-arrow-dropleft"></span>
+                                            &nbsp;Back
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </li>
 
-                <li class="layer-who-we-are" data-transition="fade">
+                <li data-menu-item="our-works" class="product-case" data-transition="fade">
+
+                    <img    src="/images/samples/cases/cnl-studio.jpg"
+                            alt="Cnl Tv Studio"
+                            class="rev-slidebg"
+                            data-bgposition="center center"
+                            data-bgfit="cover"
+                            data-bgrepeat="no-repeat"
+
+                            data-kenburns="on"
+                            data-duration="18000"
+                            data-ease="Linear.easeNone"
+                            data-scalestart="100"
+                            data-scaleend="120"
+                            data-offsetstart="0 0"
+                            data-offsetend="0 0"
+                            data-rotatestart="0"
+                            data-rotateend="0">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-3"
+                         data-frames='[{"delay": 700, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 1200, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-contrast">
+                                OUR<br>
+                                WORKS
+                            </div>
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                             data-frames='[{"delay":400,"speed":900,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-x="right"
+                             data-y="top"
+                             data-hoffset="1"
+                             data-voffset="0"
+                             data-width="580">
+
+                            <div class="gray-product-form">
+
+                                <div class="preview-info">
+                                    <div class="product-category">
+                                        Brand Experience
+                                    </div>
+                                    <h2>CNL TV Channel</h2>
+                                    <p>
+                                        Bringing TV Studios to life,
+                                        conducting daily live broadcasts
+                                    </p>
+                                    <a class="toggle-detail-info">
+                                        Explore
+                                    </a>
+
+                                </div>
+
+                                <div class="detail-info">
+                                    <h3>Challenge</h3>
+                                    <p>
+                                        CNL TV Channel is Russian Christian broadcasting network with media coverage across 150
+                                        countries. The team is expanding and building new offices and TV studios globally.
+                                    </p>
+
+                                    <h3>Result</h3>
+                                    <p>
+                                        Throughout several years of friendship and constant technical assistance together we built two
+                                        independent studios in Seattle and San Diego. Happily we were executing construction
+                                        planning, and mainly technical planning and procurement, installations and remodeling for the
+                                        last 4 years. Our production director makes daily live broadcasts in SD location featuring
+                                        pastor’s preaching through TV channel and internet. Studios serve as a place for local and
+                                        invited guests, evangelists and Christian personas.
+                                    </p>
+
+                                    <a class="toggle-detail-info">
+                                        Back
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li data-menu-item="our-works" class="product-case" data-transition="fade">
+
+                    <img
+                            src="/images/samples/cases/sacramento-studio-2.jpg"
+                            alt="Cnl Tv Studio"
+                            class="rev-slidebg"
+                            data-bgposition="center center"
+                            data-bgfit="cover"
+                            data-bgrepeat="no-repeat"
+
+                            data-kenburns="on"
+                            data-duration="18000"
+                            data-ease="Linear.easeNone"
+                            data-scalestart="100"
+                            data-scaleend="120"
+                            data-offsetstart="0 0"
+                            data-offsetend="0 0"
+                            data-rotatestart="0"
+                            data-rotateend="0">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-3"
+                         data-frames='[{"delay": 700, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 1200, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-contrast">
+                                OUR<br>
+                                WORKS
+                            </div>
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                             data-frames='[{"delay":400,"speed":900,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-x="right"
+                             data-y="top"
+                             data-hoffset="1"
+                             data-voffset="0"
+                             data-width="580">
+
+                            <div class="gray-product-form">
+
+                                <div class="preview-info">
+                                    <div class="product-category">
+                                        Brand Experience
+                                    </div>
+                                    <h2>CNL TV Channel</h2>
+                                    <p>
+                                        Bringing TV Studios to life,
+                                        conducting daily live broadcasts
+                                    </p>
+                                    <a class="toggle-detail-info">
+                                        Explore
+                                    </a>
+
+                                </div>
+
+                                <div class="detail-info">
+                                    <h3>Challenge</h3>
+                                    <p>
+                                        CNL TV Channel is Russian Christian broadcasting network with media coverage across 150
+                                        countries. The team is expanding and building new offices and TV studios globally.
+                                    </p>
+
+                                    <h3>Result</h3>
+                                    <p>
+                                        Throughout several years of friendship and constant technical assistance together we built two
+                                        independent studios in Seattle and San Diego. Happily we were executing construction
+                                        planning, and mainly technical planning and procurement, installations and remodeling for the
+                                        last 4 years. Our production director makes daily live broadcasts in SD location featuring
+                                        pastor’s preaching through TV channel and internet. Studios serve as a place for local and
+                                        invited guests, evangelists and Christian personas.
+                                    </p>
+
+                                    <a class="toggle-detail-info">
+                                        Back
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li data-menu-item="our-works" class="products-more" data-transition="fade">
+
+                    <img
+                            src="/images/samples/cases/sacramento-studio-2.jpg"
+                            alt="Cnl Tv Studio"
+                            class="rev-slidebg">
+
+                    <!-- BEGIN OVERLAY LAYER -->
+                    <div class="layer-overlay tp-caption tp-resizeme"
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0.5", "to": "opacity: 0.85"},{"delay":"wait","speed":500,"from": "opacity: 0.85", "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-width="100%"
+                         data-height="1500">
+                    </div>
+                    <!-- // END OVERLAY LAYER -->
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-10"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-3"
+                         data-frames='[{"delay": 700, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 1200, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-contrast">
+                                THERE IS<br>
+                                MORE TO COME
+                            </div>
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                             data-frames='[{"delay":600,"speed":900,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-x="left"
+                             data-y="top"
+                             data-hoffset="1"
+                             data-voffset="190">
+
+                            <div class="gray-block-form">
+
+                                <h3>Like our works?</h3>
+
+                                <p>
+                                    Would you like to get presentation with<br>
+                                    complete portfolio?
+                                </p>
+
+                                <input type="text" placeholder="Your email">
+
+                                <br/>
+
+                                <button type="button">Apply</button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tp-caption rs-parallaxlevel-4"
+                             data-frames='[{"delay": 2500, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
+                             data-type="text"
+                             data-x="center"
+                             data-y="center"
+                             data-hoffset="180"
+                             data-voffset="-10">
+
+                            <div class="scroll-line"></div>
+
+                            <div class="mouse center-block"></div>
+                            <div class="arrow-scroll">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </li>
+
+                <li data-menu-item="our-team" class="layer-our-team" data-transition="slidevertical">
+
+                    <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-2"
+                         data-frames='[{"delay": 600, "speed": 600, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 200, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-dark">
+                                OUR<br>
+                                TEAM
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="right"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="20"
+                         data-width="640">
+
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="33%">
+                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/polina.jpg')">
+                                        <div class="description">
+                                            <h4>Polina<br>Art</h4>
+                                            <span>Founder, Brand Sculptor</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="33%">
+                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alex.jpg')">
+                                        <div class="description">
+                                            <h4>Alex<br>Maximov</h4>
+                                            <span>Technical/Production Director</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="33%">
+                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/lena.jpg')">
+                                        <div class="description">
+                                            <h4>Lena<br>Pozdnyakova </h4>
+                                            <span>Lead Designer</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="33%">
+                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/tatyana.jpg')">
+                                        <div class="description">
+                                            <h4>Tatyana<br>Kim</h4>
+                                            <span>Art Director</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="33%">
+                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/kamilla.jpg')">
+                                        <div class="description">
+                                            <h4>Kamila<br>Pletneva</h4>
+                                            <span>Strategic Planner</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="33%">
+                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alexander.jpg')">
+                                        <div class="description">
+                                            <h4>Alexander<br>Koshevy</h4>
+                                            <span>Web Development Director</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="33%">
+                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/fumi.jpeg')">
+                                        <div class="description">
+                                            <h4>Fumi<br>Matsubara</h4>
+                                            <span>Digital Expert</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="33%">
+                                    <div class="team-mate">
+                                        Wanna be<br>
+                                        a new<br>
+                                        teammate?
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </li>
+
+                <li data-menu-item="contact-us" class="layer-lets-work-together" data-transition="slidevertical">
 
                     <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
 
@@ -411,7 +1101,7 @@
                     <!-- // END GRID LAYER -->
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-3"
-                         data-frames='[{"delay": 0, "speed": 600, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 200, "to": "opacity: 0"}]'
+                         data-frames='[{"delay": 600, "speed": 600, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 200, "to": "opacity: 0"}]'
                          data-x="center"
                          data-y="center"
                          data-hoffset="0"
@@ -426,8 +1116,41 @@
 
                     </div>
 
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-0 follow-us"
+                         data-frames='[{"delay":600,"speed":900,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-x="center"
+                         data-y="bottom"
+                         data-hoffset="0"
+                         data-voffset="100">
+
+                        <div class="layer-at-grid">
+                            <h3>FOLLOW US IN SOCIALS:</h3>
+                            <div class="socials">
+                                <span class="ion-social-instagram-outline">
+                                </span>
+
+                                <span class="ion-social-linkedin-outline">
+                                </span>
+
+                                <span class="ion-social-facebook">
+                                </span>
+                            </div>
+
+                            <br><br>
+
+                            <div class="copyrights">
+                                COPYRIGHT 2017. SCULPTOS AND CARVING BRANDS<br>
+                                FOR BETTER FUTURE ARE REGISTERED TRADEMARKS.<br>
+                                <br>
+                                ANY INFRINGEMENT ON BOTH TRADEMARKS MAY<br>
+                                RESULT IN LEGAL PUNISHMENT.<br>
+                            </div>
+                        </div>
+
+                    </div>
+
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
-                         data-frames='[{"delay":0,"speed":900,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-frames='[{"delay":600,"speed":900,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-x="right"
                          data-y="top"
                          data-hoffset="1"
@@ -438,14 +1161,18 @@
                             <p>
                                 <strong>Contact us:</strong><br/>
                                 hello@sculptos.com<br/>
-                                +1 738 123 23 13<br/>
+                                +1 (888) 885-7535<br/>
+                                <br>
+                                <strong>Meet us:</strong><br/>
+                                5205 Avenida Encinas Suite A,<br>
+                                Carlsbad, CA 92008
 
                                 <br/>
                                 <span class="dots"> ·   ·   ·  </span>
                                 <br/>
 
                                 You can send us your <i>email</i> or telephone number<br/>
-                                and we'll contact to you in short time!
+                                and we'll contact to you in a short time!
                             </p>
 
                             <input type="text" placeholder="Your email or phone number">
@@ -459,7 +1186,7 @@
                     </div>
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
-                         data-frames='[{"delay":0,"speed":800,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                         data-frames='[{"delay":0,"speed":500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-x="center"
                          data-y="bottom"
                          data-hoffset="0"
@@ -477,482 +1204,6 @@
 
                 </li>
 
-                <!--
-                <li class="rslide-white-info" data-transition="slidevertical">
-
-                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="0"
-                         data-height="1500">
-
-                        <div class="v-lines">
-                            <div class="v-wrap">
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                            </div>
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay": 800, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
-                             data-x="center"
-                             data-y="center"
-                             data-hoffset="0"
-                             data-voffset="-180">
-
-                            <div class="layer-at-grid">
-                                <div class="r-slide-header-back-dark">
-                                    HOW WE<br/>
-                                    WORK
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-x="left"
-                             data-y="center"
-                             data-hoffset="0"
-                             data-voffset="-25">
-
-                            <div class="r-slide-header-front-dark">
-                                Sketch
-                            </div>
-
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":400,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-x="left"
-                             data-y="center"
-                             data-hoffset="0"
-                             data-voffset="70">
-
-                            <div class="r-slide-plain-text-dark">
-                                We bring brands to life by sculpting innovative products,<br/>
-                                sketching strategic direction while propelling creative<br/>
-                                campaigns to actual sales.
-                            </div>
-
-                        </div>
-
-                        <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="image"
-                             data-x="right"
-                             data-y="top"
-                             data-hoffset="-86"
-                             data-voffset="-70"
-                             data-width="500"
-                             data-width="['auto']">
-
-                            <img src="/images/samples/sculpture-1.png" />
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay": 800, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}]'
-                             data-x="center"
-                             data-y="bottom"
-                             data-hoffset="0"
-                             data-voffset="-50">
-
-                            <div class="layer-at-grid">
-                                <div class="progress-bar">
-                                    <div class="indicator"></div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </li>
-                <li class="rslide-white-info" data-transition="slidevertical">
-
-                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="0"
-                         data-height="1500">
-
-                        <div class="v-lines">
-                            <div class="v-wrap">
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="-180">
-
-                        <div class="layer-at-grid">
-                            <div class="r-slide-header-back-dark">
-                                HOW WE<br/>
-                                WORK
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":0,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-type="image"
-                         data-x="left"
-                         data-y="top"
-                         data-hoffset="-56"
-                         data-voffset="120"
-                         data-width="500"
-                         data-width="['auto']">
-
-                        <img src="/images/samples/sculpture-2.png" />
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-x="left"
-                         data-y="center"
-                         data-hoffset="480"
-                         data-voffset="-125">
-                        <div class="r-slide-header-front-dark">
-                            Cut
-                        </div>
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-x="left"
-                         data-y="top"
-                         data-hoffset="480"
-                         data-voffset="180">
-
-                        <div class="r-slide-plain-text-dark">
-                            We concentrate on the main.<br/>
-                            <br/>
-                            That carving methods helped startups, corporations<br/>
-                            and numerous companies to impact globally and make<br/>
-                            our lives better. Agency is located in San Diego,<br/>
-                            CA and unites community of brand sculptors, creative<br/>
-                            artists and developers.
-                        </div>
-
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{}]'
-                         data-x="center"
-                         data-y="bottom"
-                         data-hoffset="0"
-                         data-voffset="-50">
-
-                        <div class="layer-at-grid">
-                            <div class="progress-bar" data-step="2">
-                                <div class="indicator"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </li>
-                <li class="rslide-white-info" data-transition="slidevertical">
-
-                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="0"
-                         data-height="1500">
-
-                        <div class="v-lines">
-                            <div class="v-wrap">
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="-180">
-
-                        <div class="layer-at-grid">
-                            <div class="r-slide-header-back-dark">
-                                HOW WE<br/>
-                                WORK
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":0,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-type="image"
-                         data-x="right"
-                         data-y="top"
-                         data-hoffset="0"
-                         data-voffset="-61"
-                         data-width="575"
-                         data-width="['auto']">
-
-                        <img src="/images/samples/sculpture-3.png" />
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-x="left"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="-20">
-                        <div class="r-slide-header-front-dark">
-                            Unleash
-                        </div>
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-x="left"
-                         data-y="top"
-                         data-hoffset="0"
-                         data-voffset="285">
-
-                        <div class="r-slide-plain-text-dark">
-                            We bring brands to life by sculpting innovative<br/>
-                            products, sketching strategic direction<br/>
-                            while propelling creative<br/>
-                            campaigns to actual sales.
-                        </div>
-
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{}]'
-                         data-x="center"
-                         data-y="bottom"
-                         data-hoffset="0"
-                         data-voffset="-50">
-
-                        <div class="layer-at-grid">
-                            <div class="progress-bar" data-step="3">
-                                <div class="indicator"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </li>
-                <li class="rslide-white-info" data-transition="slidevertical">
-
-                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="0"
-                         data-height="1500">
-
-                        <div class="v-lines">
-                            <div class="v-wrap">
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="-180">
-
-                        <div class="layer-at-grid">
-                            <div class="r-slide-header-back-dark">
-                                HOW WE<br/>
-                                WORK
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
-                         data-type="image"
-                         data-x="left"
-                         data-y="top"
-                         data-hoffset="-52"
-                         data-voffset="120"
-                         data-width="500"
-                         data-width="['auto']">
-
-                        <img src="/images/samples/sculpture-4.png" />
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-x="left"
-                         data-y="center"
-                         data-hoffset="480"
-                         data-voffset="-125">
-                        <div class="r-slide-header-front-dark">
-                            Labor
-                        </div>
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay":400,"speed":1000,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                         data-x="left"
-                         data-y="top"
-                         data-hoffset="480"
-                         data-voffset="180">
-
-                        <div class="r-slide-plain-text-dark">
-                            Agency is located in San Diego,<br/>
-                            CA and unites community of brand sculptors, creative<br/>
-                            artists and developers.
-                        </div>
-
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{}]'
-                         data-x="center"
-                         data-y="bottom"
-                         data-hoffset="0"
-                         data-voffset="-50">
-
-                        <div class="layer-at-grid">
-                            <div class="progress-bar" data-step="4">
-                                <div class="indicator"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </li>
-                <li class="rslide-white-info" data-transition="slidevertical">
-
-                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="0"
-                         data-height="1500">
-
-                        <div class="v-lines">
-                            <div class="v-wrap">
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                            </div>
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay": 0, "speed": 500, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
-                             data-x="center"
-                             data-y="center"
-                             data-hoffset="0"
-                             data-voffset="-180">
-
-                            <div class="layer-at-grid">
-                                <div class="r-slide-header-back-dark">
-                                    HOW WE<br/>
-                                    WORK
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":300,"speed":600,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-x="left"
-                             data-y="center"
-                             data-hoffset="0"
-                             data-voffset="-25">
-
-                            <div class="r-slide-header-front-dark">
-                                Proclaim
-                            </div>
-
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":400,"speed":800,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-x="left"
-                             data-y="center"
-                             data-hoffset="0"
-                             data-voffset="70">
-
-                            <div class="r-slide-plain-text-dark">
-                                We bring brands to life by sculpting innovative products,<br/>
-                                sketching strategic direction while propelling creative<br/>
-                                campaigns to actual sales.
-                            </div>
-
-                        </div>
-
-                        <div class="layer-illustration tp-caption tp-resizeme rs-parallaxlevel-10"
-                             data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-type="image"
-                             data-x="right"
-                             data-y="top"
-                             data-hoffset="0"
-                             data-voffset="-70"
-                             data-width="500"
-                             data-width="['auto']">
-
-                            <img src="/images/samples/sculpture-5.png" />
-                        </div>
-
-                    </div>
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-10"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]'
-                         data-x="center"
-                         data-y="bottom"
-                         data-hoffset="0"
-                         data-voffset="-50">
-
-                        <div class="layer-at-grid">
-                            <div class="progress-bar" data-step="5">
-                                <div class="indicator"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </li>
-                -->
 
             </ul>
             <!-- // END FIRST SCREEN SLIDER  -->

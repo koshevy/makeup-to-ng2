@@ -48,6 +48,7 @@
   font-style: italic;
 }
 
+
 /** ******** **/
 /** Ionicons **/
 /** ******** **/
@@ -57,6 +58,20 @@
   src: url('/fonts/Ionicons/ionicons.eot');
   src:  url('/fonts/Ionicons/ionicons.woff') format('woff'),
   url('/fonts/Ionicons/ionicons.ttf') format('truetype'), url('/fonts/Ionicons/ionicons.svg') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+/** ****** **/
+/** Gotham **/
+/** ****** **/
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('/fonts/Gotham-Light/fonts/GothaProLig.eot');
+  src:  url('/fonts/Gotham-Light/fonts/GothaProLig.woff') format('woff'),
+  url('/fonts/Gotham-Light/fonts/GothaProLig.ttf') format('truetype'), url('/fonts/Gotham-Light/fonts/GothaProLig.svg') format('svg');
   font-weight: 300;
   font-style: normal;
 }

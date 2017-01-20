@@ -93,4 +93,20 @@ jQuery(document).ready(function() {
 
         return false;
     });
+
+    $('.gray-product-form .toggle-detail-gallery').click(function(){
+        var $productForm = $(this).closest('.gray-product-form');
+        $productForm.find('.detail-info').toggle();
+        $productForm.find('.detail-gallery').toggle();
+
+        return false;
+    });
+
+    $('.detail-gallery .gallery-item').click(function(){
+        $(this).closest('.product-case')
+            .find('.tp-kbimg').attr(
+                'src',
+                $(this).attr('data-large-image')
+            );
+    });
 });
