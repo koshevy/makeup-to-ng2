@@ -109,4 +109,23 @@ jQuery(document).ready(function() {
                 $(this).attr('data-large-image')
             );
     });
+
+    $('#new-team-mate').click(function(){
+        $('#team-mate-form').fadeIn(200);
+    });
+
+    $('#team-mate-form .back').click(function(){
+        $('#team-mate-form').fadeOut(200);
+    });
+
+    $('.team-mate-bio .back').click(function(){
+        $(this).closest('.team-mate-bio').fadeOut();
+    });
+
+    $('#teammates .gallery-item').click(function () {
+        $(this).closest('li')
+            .find('.team-mate-bio')
+            .eq($('#teammates .gallery-item').index(this))
+            .fadeIn(200);
+    })
 });

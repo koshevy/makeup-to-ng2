@@ -74,8 +74,7 @@
                          data-hoffset="0"
                          data-voffset="0"
                          data-basealign="slide">
-
-                    <div>
+                    </div>
 
                     <!-- BEGIN OVERLAY LAYER -->
                     <div class="layer-overlay tp-caption tp-resizeme rs-parallaxlevel-0"
@@ -196,7 +195,9 @@
                 <!-- // END FIRST SCREEN SLIDER  -->
 
                 <li data-menu-item="who-we-are" class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
-                    <img src="images/samples/intro-bg.jpg" class="rev-slidebg">
+                    <img data-lazyload="images/samples/intro-bg.jpg"
+                         src="assets/images/transparent.png"
+                         class="rev-slidebg" >
 
                     <!-- BEGIN OVERLAY LAYER -->
                     <div class="layer-overlay tp-caption tp-resizeme"
@@ -437,7 +438,8 @@
 
                 <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
-                    <img    src="/images/samples/cases/belo-grandola-all-in-one.jpg"
+                    <img    src="assets/images/transparent.png"
+                            data-lazyload="/images/samples/cases/belo-grandola-all-in-one.jpg"
                             alt="Belo Granola brand"
                             class="rev-slidebg"
                             data-bgposition="center center"
@@ -536,7 +538,7 @@
 
                                     <div class="project-navigation">
                                         <a class="toggle-detail-info">
-                                            <span class="ion-ios-arrow-left"></span>
+                                            <span class="ion-android-arrow-dropleft"></span>
                                             &nbsp;Back
                                         </a>
                                         &nbsp; &nbsp; | &nbsp; &nbsp;
@@ -555,53 +557,21 @@
                                     <table cellpadding="0" cellspacing="0" width="100%">
                                         <tr>
                                             <td width="33%">
-                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/polina.jpg')">
-                                                    <div class="description">
-                                                        <h4>Polina<br>Art</h4>
-                                                        <span>Founder, Brand Sculptor</span>
-                                                    </div>
+                                                <div data-large-image="/images/samples/cases/belo-grandola-all-in-one.jpg"
+                                                     class="gallery-item grayscale"
+                                                     style="background-image: url('/images/samples/cases/previews/belo-grandola-all-in-one.jpg')">
                                                 </div>
                                             </td>
                                             <td width="33%">
-                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alex.jpg')">
-                                                    <div class="description">
-                                                        <h4>Alex<br>Maximov</h4>
-                                                        <span>Technical/Production Director</span>
-                                                    </div>
+                                                <div data-large-image="/images/samples/cases/belo-grandola-book.jpg"
+                                                     class="gallery-item grayscale"
+                                                     style="background-image: url('/images/samples/cases/previews/belo-grandola-book.jpg')">
                                                 </div>
                                             </td>
                                             <td width="33%">
-                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/lena.jpg')">
-                                                    <div class="description">
-                                                        <h4>Lena<br>Pozdnyakova </h4>
-                                                        <span>Lead Designer</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td width="33%">
-                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/tatyana.jpg')">
-                                                    <div class="description">
-                                                        <h4>Tatyana<br>Kim</h4>
-                                                        <span>Art Director</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/kamilla.jpg')">
-                                                    <div class="description">
-                                                        <h4>Kamila<br>Pletneva</h4>
-                                                        <span>Strategic Planner</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alexander.jpg')">
-                                                    <div class="description">
-                                                        <h4>Alexander<br>Koshevy</h4>
-                                                        <span>Web Development Director</span>
-                                                    </div>
+                                                <div data-large-image="/images/samples/cases/belo-grandola-packages.jpg"
+                                                     class="gallery-item grayscale"
+                                                     style="background-image: url('/images/samples/cases/previews/belo-grandola-packages.jpg')">
                                                 </div>
                                             </td>
                                         </tr>
@@ -1002,7 +972,7 @@
                         <table cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/polina.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/polina.jpg')">
                                         <div class="description">
                                             <h4>Polina<br>Art</h4>
                                             <span>Founder, Brand Sculptor</span>
@@ -1010,7 +980,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alex.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/alex-1.jpg')">
                                         <div class="description">
                                             <h4>Alex<br>Maximov</h4>
                                             <span>Technical/Production Director</span>
@@ -1018,7 +988,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/lena.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/lena.jpg')">
                                         <div class="description">
                                             <h4>Lena<br>Pozdnyakova </h4>
                                             <span>Lead Designer</span>
@@ -1028,7 +998,7 @@
                             </tr>
                             <tr>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/tatyana.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/tatyana.jpg')">
                                         <div class="description">
                                             <h4>Tatyana<br>Kim</h4>
                                             <span>Art Director</span>
@@ -1036,7 +1006,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/kamilla.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/kamilla.jpg')">
                                         <div class="description">
                                             <h4>Kamila<br>Pletneva</h4>
                                             <span>Strategic Planner</span>
@@ -1044,7 +1014,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/alexander.jpg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/alexander-1.jpg')">
                                         <div class="description">
                                             <h4>Alexander<br>Koshevy</h4>
                                             <span>Web Development Director</span>
@@ -1054,7 +1024,7 @@
                             </tr>
                             <tr>
                                 <td width="33%">
-                                    <div class="team-mate grayscale" style="background-image: url('/images/samples/sculptos-team/fumi.jpeg')">
+                                    <div class="gallery-item grayscale" style="background-image: url('/images/samples/sculptos-team/fumi-matsuba.jpg')">
                                         <div class="description">
                                             <h4>Fumi<br>Matsubara</h4>
                                             <span>Digital Expert</span>
@@ -1062,7 +1032,7 @@
                                     </div>
                                 </td>
                                 <td width="33%">
-                                    <div class="team-mate">
+                                    <div class="gallery-item">
                                         Wanna be<br>
                                         a new<br>
                                         teammate?

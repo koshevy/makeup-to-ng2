@@ -108,6 +108,12 @@ body {
 			}
 		}
 
+		.layer-what-we-are-do{
+			.tp-bgimg{
+				background: #f6f8fa !important;
+			}
+		}
+
 		.layer-illustration{
 			img{
 				max-width: 100%;
@@ -248,14 +254,14 @@ body {
 }
 
 .gray-block{
-	background: rgba(255,255,255,0.85);
+	background: rgba(255,255,255,0.95);
 	padding: 80px 0 52px 0;
 	margin: 0 -1500px;
 }
 
 .gray-block-form,
 .gray-product-form{
-	background: rgba(255,255,255,0.85);
+	background: rgba(255,255,255,0.95);
 	padding: 52px;
 
 	&.gray-product-form{
@@ -373,6 +379,7 @@ body {
 	word-wrap: normal !important;
 	font-size: 22px;
 	line-height: 140%;
+	margin-bottom: 28px !important;
 }
 
 .service-items{
@@ -407,6 +414,7 @@ body {
 	font-size: 28px;
 	margin-top: -18px;
 	z-index: 102;
+	margin-bottom: 34px !important;
 }
 
 .tp-loader{
@@ -463,11 +471,11 @@ p{
 	line-height: 140%;
 }
 
-input[type="text"]{
+input[type="text"],
+textarea{
 	background: none;
 	border: 0 $extColor2 solid;
-	border-top-width: 2px;
-	border-bottom-width: 2px;
+	border-bottom-width: 3px;
 	height: 2rem;
 	width: 360px;
 	font-weight: 300;
@@ -657,10 +665,102 @@ table{
 	.socials{
 		font-size: 38px;
 
-		span{
+		a{
 			display: inline-block;
-			margin-right: 20px;
+			margin-right: 20px !important;
+			color: #333;
+			text-decoration: none;
 		}
+	}
+}
+
+.layer-our-team .dddwrapper-layer{
+	background: #f6f8fa !important;
+	opacity: 1 !important;
+}
+
+.layer-lets-work-together .dddwrapper-layer{
+	background: #f6f8fa !important;
+	opacity: 1 !important;
+}
+
+.team-mate-bio,
+#team-mate-form{
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(11, 31, 64, 0.98);
+	padding: 72px 42px !important;
+	z-index: 102;
+	color: #fff;
+
+	h3{
+		font-size: 48px;
+		font-weight: bold;
+		line-height: 140%;
+	}
+
+	.control-group{
+		display: block;
+		margin-bottom: 32px !important;
+
+		&:last-of-type{
+			margin-bottom: 0 !important;
+		}
+
+		input,
+		textarea{
+			border-color: #fff;
+			color: #fff;
+			background: rgba(255,255,255,0.05);
+			padding: 8px 12px !important;
+		}
+
+		textarea{
+			height: 150px;
+			resize: none;
+			width: 100%;
+		}
+
+		button{
+			background: rgba(255,255,255,0.8);
+			color: $brandColor;
+			margin-right: 18px;
+
+			&.apply{
+				background: #fff;
+			}
+		}
+	}
+}
+
+.team-mate-bio{
+	.gallery-item{
+		width: 23%;
+		margin: 0 !important;
+		float: left;
+	}
+
+	h3{
+		margin: 0 0 0 30% !important;
+	}
+
+	p{
+		clear: both;
+		float: none;
+		word-wrap: normal !important;
+		white-space: normal !important;
+		padding: 32px 0 0 0 !important;
+		margin: 1px 0 42px 0 !important;
+	}
+}
+
+#team-mate-form{
+	h3{
+		margin: 0 0 42px 0 !important;
 	}
 }
 
