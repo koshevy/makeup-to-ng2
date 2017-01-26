@@ -1,5 +1,5 @@
 /* https://learn.jquery.com/using-jquery-core/document-ready/ */
-jQuery(document).ready(function() {
+var initSlider = function() {
 
     /* initialize the slider based on the Slider's ID attribute */
     var $api = jQuery('#rev_slider_1').show().revolution({
@@ -103,11 +103,37 @@ jQuery(document).ready(function() {
     });
 
     $('.detail-gallery .gallery-item').click(function(){
-        $(this).closest('.product-case')
-            .find('.tp-kbimg').attr(
-                'src',
-                $(this).attr('data-large-image')
-            );
+
+        var $gallery = $('#full-screen-gallery'),
+            imgSrc = $(this).attr('data-large-image');
+
+        $gallery.addClass('loading')
+            .fadeIn(400, function () {
+                $gallery.find('img').remove();
+                $gallery.append('<div class="img-wrap"><img src="'+imgSrc+'"></div>');
+
+                var $img = $gallery.find('img');
+
+                $img[0].onload = function(){
+                    $gallery.removeClass('loading');
+                    $gallery.find('.img-wrap').css(
+                        'background-image',
+                        "url("+imgSrc+")"
+                    );
+                }
+
+                if($img[0].complete) {
+                    $gallery.removeClass('loading');
+                    $gallery.find('.img-wrap').css(
+                        'background-image',
+                        "url("+imgSrc+")"
+                    );
+                }
+            });
+    });
+
+    $('#full-screen-gallery').click(function(){
+        $(this).fadeOut(400);
     });
 
     $('#new-team-mate').click(function(){
@@ -128,4 +154,9 @@ jQuery(document).ready(function() {
             .eq($('#teammates .gallery-item').index(this))
             .fadeIn(200);
     })
+};
+
+jQuery(document).ready(function(){
+    setTimeout(initSlider, 2000);
+    setTimeout(function(){$('#page-loader').hide();}, 4000);
 });

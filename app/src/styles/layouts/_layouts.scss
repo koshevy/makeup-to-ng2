@@ -21,11 +21,18 @@ html {
 	cursor: pointer;
 }
 
+a, a:visited, a:active, a:focus{
+	outline: none;
+	color: inherit;
+}
+
 body {
 	background: #fff;
 	font-family: 'Source Sans Pro';
 
 	.fullscreen-container{
+		min-width: 1100px;
+
 		#rslide-main-screen{
 			.layer-logo{
 				img{
@@ -169,6 +176,7 @@ body {
 #main-menu{
 	display: block;
 	position: fixed;
+	min-width: 1100px;
 	left: 0;
 	top: 0;
 	right: 0;
@@ -776,4 +784,42 @@ table{
 
 @keyframes rotate360 {
 	to { transform: rotate(360deg); }
+}
+
+#full-screen-gallery{
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 201;
+	background: rgba(11, 31, 64, 0.9);
+
+	.tp-loader{
+		display: none;
+	}
+
+	&.loading{
+		.tp-loader{
+			display: block;
+		}
+
+		.img-wrap{
+			display: none;
+		}
+	}
+
+	.img-wrap {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+
+		img { opacity: 0; }
+	}
 }
