@@ -313,6 +313,67 @@ body {
 			display: none;
 		}
 	}
+
+	> *{
+		opacity: 1;
+		transition: opacity .6s ease !important;
+	}
+
+	.sent-message{
+		display: none;
+	}
+
+	&.loading{
+
+		> *{
+			opacity: .2;
+		}
+
+		&:before{
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 103;
+		}
+
+		&:after{
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: 128px;
+			height: 128px;
+			left: 50%;
+			top: 50%;
+			margin-top: -64px;
+			margin-left: -64px;
+			border: 3px solid $extColor2;
+			border-radius: 50%;
+			box-sizing: border-box;
+			clip: rect(0px,82px,202px,0px);
+
+			animation: 2s rotate360 infinite linear;
+		}
+	}
+
+	&.sent{
+		input,
+		textarea,
+		button,
+		.control-group{
+			display: none;
+		}
+
+		.sent-message{
+			display: block;
+			font-size: 26px !important;
+			line-height: 140% !important;
+			color: $extColor3;
+		}
+	}
 }
 
 .r-slide-header-back,
@@ -491,6 +552,10 @@ textarea{
 
 	&:focus{
 		outline: none;
+	}
+
+	&.error{
+		border-color: #ff2825;
 	}
 }
 
@@ -725,6 +790,10 @@ table{
 			color: #fff;
 			background: rgba(255,255,255,0.05);
 			padding: 8px 12px !important;
+
+			&.error{
+				border-color: #ff2825;
+			}
 		}
 
 		textarea{
@@ -741,6 +810,66 @@ table{
 			&.apply{
 				background: #fff;
 			}
+		}
+	}
+
+	> *{
+		opacity: 1;
+		transition: opacity .6s ease !important;
+	}
+
+	&.loading{
+
+		> *{
+			opacity: .2;
+		}
+
+		&:before{
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 103;
+		}
+
+		&:after{
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: 128px;
+			height: 128px;
+			left: 50%;
+			top: 50%;
+			margin-top: -64px;
+			margin-left: -64px;
+			border: 3px solid #fff;
+			border-radius: 50%;
+			box-sizing: border-box;
+			clip: rect(0px,82px,202px,0px);
+
+			animation: 2s rotate360 infinite linear;
+		}
+	}
+
+	.sent-message{
+		display: none;
+	}
+
+	&.sent{
+		input,
+		textarea,
+		button[type="submit"]{
+			display: none;
+		}
+
+		.sent-message{
+			display: block;
+			font-size: 28px !important;
+			line-height: 140% !important;
+			color: #fff;
 		}
 	}
 }

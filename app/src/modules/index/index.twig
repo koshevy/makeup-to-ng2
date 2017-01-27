@@ -2,9 +2,10 @@
 {% set template = 'index' %}
 {%
 set headerStyles = [
-"/vendor/revolution-slider/css/settings.css",
-"/vendor/revolution-slider/css/layers.css",
-"/vendor/revolution-slider/css/navigation.css"
+    "/vendor/revolution-slider/css/settings.css",
+    "/vendor/revolution-slider/css/layers.css",
+    "/vendor/revolution-slider/css/navigation.css",
+    "/vendor/growl/stylesheets/jquery.growl.css"
 ]
 %}
 {%
@@ -16,12 +17,15 @@ set headerScripts = [
     "/vendor/revolution-slider/js/extensions/revolution.extension.parallax.min.js",
     "/vendor/revolution-slider/js/extensions/revolution.extension.video.min.js",
 
+    "/vendor/growl/javascripts/jquery.growl.js",
     "/scripts/main.js"
 ]
 %}
 
 {% extends 'layouts/default.twig' %}
 {% block content %}
+
+    <input type="hidden" id="src-key" value="0123456789ABCDEFGHIGKLMN">
 
     <ul id="main-menu">
         <li class="menu-logo">
@@ -1294,7 +1298,7 @@ set headerScripts = [
                              data-hoffset="1"
                              data-voffset="190">
 
-                            <div class="gray-block-form">
+                            <form class="gray-block-form" data-form-type="callbackRequest">
 
                                 <h3>Like our work?</h3>
 
@@ -1303,15 +1307,20 @@ set headerScripts = [
                                     complete portfolio?
                                 </p>
 
-                                <input type="text" placeholder="First Name">
+                                <input name="name" type="text" placeholder="First Name" required>
                                 <br/>
-                                <input type="text" placeholder="Your email">
+                                <input name="emailOrPhone" type="text" placeholder="Your email or phone number" required>
 
                                 <br/>
 
-                                <button type="button">Apply</button>
+                                <button type="submit">Apply</button>
 
-                            </div>
+                                <p class="sent-message">
+                                    Thank you for your request!<br/>
+                                    We'll answer you shortly!
+                                </p>
+
+                            </form>
 
                         </div>
 
@@ -1459,30 +1468,35 @@ set headerScripts = [
                             </tr>
                         </table>
 
-                        <div id="team-mate-form">
+                        <form id="team-mate-form" data-form-type="vacancyRequest">
                             <h3>
                                 Getting started<br>
                                 work with us
                             </h3>
 
                             <div class="control-group">
-                                <input type="text" placeholder="Full Name" />
+                                <input name="name" type="text" placeholder="Name" required />
                             </div>
 
                             <div class="control-group">
-                                <input type="text" placeholder="Phone number or email" />
+                                <input name="emailOrPhone" type="text" placeholder="Phone number or email" required />
                             </div>
 
                             <div class="control-group">
-                                <textarea placeholder="Few sentences about you, please..."></textarea>
+                                <textarea name="aboutText" placeholder="Few sentences about you, please..." required></textarea>
                             </div>
+
+                            <p class="sent-message">
+                                Thank you for your request!<br/>
+                                We'll answer you shortly!
+                            </p>
 
                             <div class="control-group">
-                                <button class="apply">Apply</button>
-                                <button class="back">Back</button>
+                                <button class="apply" type="submit">Apply</button>
+                                <button class="back" type="button">Back</button>
                             </div>
 
-                        </div>
+                        </form>
 
                         <div class="team-mate-bio">
 
@@ -1585,9 +1599,9 @@ set headerScripts = [
                             <h3>Alexander Koshevy</h3>
 
                             <p>
-                                >> САША НАПИШИ, РОДИ ДВА ГЕНИАЛЬНЫХ ПРЕДЛОЖЕНИЯ.<br>
-                                <br>
-                                Скоро!
+                                Specialist with more than 10 years of experience in web development,
+                                and 15 years in programming. Alexander is continuously taking managerial
+                                roles in dozens of projects mainly in e-commerce, banking and real estate industries.
                             </p>
 
                             <div class="control-group">
@@ -1703,7 +1717,7 @@ set headerScripts = [
                          data-hoffset="1"
                          data-voffset="-20">
 
-                        <div class="gray-block-form">
+                        <form class="gray-block-form" data-form-type="callbackRequest">
 
                             <p>
                                 <strong>Contact us:</strong><br/>
@@ -1721,14 +1735,19 @@ set headerScripts = [
                                 contact you shortly
                             </p>
 
-                            <input type="text" placeholder="First name">
+                            <input name="name" type="text" placeholder="Name" required>
                             <br>
-                            <input type="text" placeholder="Email or phone number">
+                            <input name="emailOrPhone" type="text" placeholder="Email or phone number" required>
                             <br/>
 
-                            <button type="button">Apply</button>
+                            <button type="submit">Apply</button>
 
-                        </div>
+                            <p class="sent-message">
+                                Thank you for your request!<br/>
+                                We'll answer you shortly!
+                            </p>
+
+                        </form>
 
                     </div>
 

@@ -7,16 +7,6 @@
     <link rel="stylesheet" href="vendor/normalize-css/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
 
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="icon" href="favicon_16x16.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="favicon_24x24.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="favicon_32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="favicon_48x48.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="favicon_64x64.png" sizes="64x64" type="image/png">
-    <link rel="icon" href="favicon_96x96.png" sizes="64x64" type="image/png">
-    <link rel="icon" href="favicon_128x128.png" sizes="128x128" type="image/png">
-    <link rel="icon" href="favicon_256x256.png" sizes="256x256" type="image/png">
-
     <script src="vendor/jquery/jquery.min.js"></script>
 
         <script src="/vendor/jquery/jquery.min.js"></script>
@@ -24,21 +14,17 @@
         <script src="/vendor/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
         <script src="/vendor/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
         <script src="/vendor/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
-        <script src="/vendor/growl/javascripts/jquery.growl.js"></script>
         <script src="/scripts/main.js"></script>
     
         <link rel="stylesheet" href="/vendor/revolution-slider/css/settings.css">
         <link rel="stylesheet" href="/vendor/revolution-slider/css/layers.css">
         <link rel="stylesheet" href="/vendor/revolution-slider/css/navigation.css">
-        <link rel="stylesheet" href="/vendor/growl/stylesheets/jquery.growl.css">
     
 </head>
 
 <body data-template="index">
 
     
-    <input type="hidden" id="src-key" value="0123456789ABCDEFGHIGKLMN">
-
     <ul id="main-menu">
         <li class="menu-logo">
             <a>
@@ -53,25 +39,16 @@
         <li data-menu-item="contact-us"><a>Connect</a></li>
     </ul>
 
-    <div id="page-loader" class="tp-loader">
-    </div>
-
     <div class="rev_slider_wrapper fullscreen-container">
 
         <!-- the ID here will be used in the JavaScript below to initialize the slider -->
-        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none;">
+        <div id="rev_slider_1" class="rev_slider fullscreenbanner" style="display:none; min-width: 1100px">
 
             <!-- BEGIN MAIN SLIDE LIST -->
             <ul>
 
                 <!-- BEGIN FIRST SCREEN SLIDER  -->
                 <li data-menu-item="index" id="rslide-main-screen" data-transition="crossfade" data-blendmode=”color-burn“>
-
-                    <img src="images/samples/intro-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgposition="center center"
-                         data-bgfit="cover"
-                         data-bgrepeat="no-repeat">
 
                     <!-- BEGIN HTML5 VIDEO LAYER -->
 
@@ -81,8 +58,8 @@
 
                          data-type="video"
                          data-videomp4="images/samples/intro.mp4"
-                         data-videowidth="110%"
-                         data-videoheight="auto"
+                         data-videowidth="1280"
+                         data-videoheight="720"
                          data-autoplay="on"
                          data-videocontrols="none"
                          data-nextslideatend="true"
@@ -135,7 +112,6 @@
                     <!-- // END GRID LAYER -->
 
                     <!-- BEGIN VOLUME LAYER -->
-                    <!--
                     <div id="layer-volume" class="tp-caption tp-resizeme rs-parallaxlevel-0"
                          data-frames='[[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 500, "to": "opacity: 0"}]]'
                          data-type="text"
@@ -164,7 +140,7 @@
                             </i>
                         </div>
 
-                    </div>-->
+                    </div>
                     <!-- // END VOLUME LAYER -->
 
                     <!-- BEGIN LOGO LAYER -->
@@ -219,11 +195,9 @@
                 <!-- // END FIRST SCREEN SLIDER  -->
 
                 <li data-menu-item="who-we-are" class="layer-who-we-are" data-transition="fade" data-speed-out="2000">
-                    <img src="images/samples/intro-bg.jpg"
-                         class="rev-slidebg"
-                         data-bgposition="center center"
-                         data-bgfit="cover"
-                         data-bgrepeat="no-repeat">
+                    <img data-lazyload="images/samples/intro-bg.jpg"
+                         src="assets/images/transparent.png"
+                         class="rev-slidebg" >
 
                     <!-- BEGIN OVERLAY LAYER -->
                     <div class="layer-overlay tp-caption tp-resizeme"
@@ -342,12 +316,7 @@
 
                 <li data-menu-item="what-we-are-do" class="layer-what-we-are-do" data-transition="slidevertical">
 
-                    <img src="assets/images/transparent.png"
-                         class="rev-slidebg"
-                         data-bgposition="center center"
-                         data-bgfit="cover"
-                         data-bgrepeat="no-repeat"
-                         style="background-color: #E7E7E7">
+                    <img src="assets/images/transparent.png" class="rev-slidebg" style="background-color: #E7E7E7">
 
                     <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-0"
@@ -469,14 +438,15 @@
 
                 <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
-                    <img    src="/images/samples/cases/belo-grandola-all-in-one.jpg"
+                    <img    src="assets/images/transparent.png"
+                            data-lazyload="/images/samples/cases/belo-grandola-all-in-one.jpg"
                             alt="Belo Granola brand"
                             class="rev-slidebg"
                             data-bgposition="center center"
                             data-bgfit="cover"
                             data-bgrepeat="no-repeat"
 
-                            data-kenburns="off"
+                            data-kenburns="on"
                             data-duration="18000"
                             data-ease="Linear.easeNone"
                             data-scalestart="100"
@@ -627,14 +597,14 @@
 
                 <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
-                    <img    src="/images/samples/cases/ubu-2.jpg"
-                            alt="UBU"
+                    <img    src="assets/images/transparent.png"
+                            alt="ATD Sports"
                             class="rev-slidebg"
                             data-bgposition="center center"
                             data-bgfit="cover"
                             data-bgrepeat="no-repeat"
 
-                            data-kenburns="off"
+                            data-kenburns="on"
                             data-duration="18000"
                             data-ease="Linear.easeNone"
                             data-scalestart="100"
@@ -643,6 +613,18 @@
                             data-offsetend="0 0"
                             data-rotatestart="0"
                             data-rotateend="0">
+
+                    <!-- BEGIN OVERLAY LAYER -->
+                    <div class="layer-overlay tp-caption tp-resizeme"
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0.5", "to": "opacity: 0.85"},{"delay":"wait","speed":500,"from": "opacity: 0.85", "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-width="100%"
+                         data-height="1500">
+                    </div>
+                    <!-- // END OVERLAY LAYER -->
 
                     <!-- BEGIN GRID LAYER -->
                     <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-0"
@@ -674,7 +656,130 @@
                          data-voffset="-180">
 
                         <div class="layer-at-grid">
-                            <div class="r-slide-header-back-dark-contrast">
+                            <div class="r-slide-header-back-contrast">
+                                OUR<br>
+                                WORKS
+                            </div>
+                        </div>
+
+                        <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+                             data-frames='[{"delay":400,"speed":900,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                             data-x="right"
+                             data-y="top"
+                             data-hoffset="1"
+                             data-voffset="0"
+                             data-width="580">
+
+                            <div class="gray-product-form">
+
+                                <div class="preview-info">
+                                    <div class="product-category">
+                                        Brand / Experience Sculpting
+                                    </div>
+                                    <h2>ATD Sports</h2>
+                                    <p>
+                                        Flavors development, Brand Audit, Packaging,
+                                        Identity and Guidelines, Brand Strategy,
+                                        Communication Kick-Off Plan
+                                    </p>
+                                    <a class="toggle-detail-info">
+                                        Explore
+                                    </a>
+
+                                </div>
+
+                                <div class="detail-info">
+                                    <h3>Challenge</h3>
+                                    <p>
+                                        ATD Sports is Los Angeles based startup specializing in management of tennis athletes. They do
+                                        matchmaking services helping children to go from the beginner to professional athlete,
+                                        supporting him on each step of sport career. As a young company ATD need to express
+                                        themselves in simple yet professional manner to catch attention of athletes, coaches and
+                                        sponsoring companies.
+                                    </p>
+
+                                    <h3>Result</h3>
+                                    <p>
+                                        SCULPTOS team crafted brand image containing brand visual system, basic sales collateral and
+                                        user-friendly website for startup operations.
+                                    </p>
+
+                                    <a class="toggle-detail-info">
+                                        Back
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li data-menu-item="our-works" class="product-case" data-transition="fade">
+
+                    <img    src="assets/images/ubu-1.png"
+                            alt="UBU"
+                            class="rev-slidebg"
+                            data-bgposition="center center"
+                            data-bgfit="cover"
+                            data-bgrepeat="no-repeat"
+
+                            data-kenburns="on"
+                            data-duration="18000"
+                            data-ease="Linear.easeNone"
+                            data-scalestart="100"
+                            data-scaleend="120"
+                            data-offsetstart="0 0"
+                            data-offsetend="0 0"
+                            data-rotatestart="0"
+                            data-rotateend="0">
+
+                    <!-- BEGIN OVERLAY LAYER -->
+                    <div class="layer-overlay tp-caption tp-resizeme"
+                         data-frames='[{"delay": 0, "speed": 300, "from": "opacity: 0.5", "to": "opacity: 0.85"},{"delay":"wait","speed":500,"from": "opacity: 0.85", "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-width="100%"
+                         data-height="1500">
+                    </div>
+                    <!-- // END OVERLAY LAYER -->
+
+                    <!-- BEGIN GRID LAYER -->
+                    <div class="layer-grid-dark tp-caption tp-resizeme rs-parallaxlevel-0"
+                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="0"
+                         data-height="1500">
+
+                        <div class="v-lines">
+                            <div class="v-wrap">
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                                <div class="v-column"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // END GRID LAYER -->
+
+                    <div class="tp-caption tp-resizeme rs-parallaxlevel-3"
+                         data-frames='[{"delay": 700, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 1200, "to": "opacity: 0"}]'
+                         data-x="center"
+                         data-y="center"
+                         data-hoffset="0"
+                         data-voffset="-180">
+
+                        <div class="layer-at-grid">
+                            <div class="r-slide-header-back-contrast">
                                 OUR<br>
                                 WORKS
                             </div>
@@ -727,54 +832,9 @@
                                         company to succeed, it is worth it!
                                     </p>
 
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-info">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                        &nbsp; &nbsp; | &nbsp; &nbsp;
-                                        <a class="toggle-detail-gallery">
-                                            Gallery&nbsp;
-                                            <span class="ion-android-arrow-dropright"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                                <div class="detail-gallery">
-                                    <h3>Gallery</h3>
-
-                                    <p>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/ubu-1.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/ubu-1.jpg')">
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/ubu-3.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/ubu-3.jpg')">
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/ubu-2.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/ubu-2.jpg')">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    </p>
-
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-gallery">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                    </div>
+                                    <a class="toggle-detail-info">
+                                        Back
+                                    </a>
 
                                 </div>
 
@@ -788,14 +848,14 @@
 
                 <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
-                    <img src="/images/samples/cases/fish-delight.jpg"
-                            alt="Cnl Tv Studio"
+                    <img    src="/images/samples/cases/auto-auction.jpg"
+                            alt="Speen Auto Auction"
                             class="rev-slidebg"
                             data-bgposition="center center"
                             data-bgfit="cover"
                             data-bgrepeat="no-repeat"
 
-                            data-kenburns="off"
+                            data-kenburns="on"
                             data-duration="18000"
                             data-ease="Linear.easeNone"
                             data-scalestart="100"
@@ -835,7 +895,7 @@
                          data-voffset="-180">
 
                         <div class="layer-at-grid">
-                            <div class="r-slide-header-back-contrast">
+                            <div class="r-slide-header-back-dark-contrast">
                                 OUR<br>
                                 WORKS
                             </div>
@@ -853,10 +913,10 @@
 
                                 <div class="preview-info">
                                     <div class="product-category">
-                                        Social Media Activation, Creative Design, Video Production, Product Photography
+                                        Brand Sculpting
                                     </div>
-                                    <h2>Fish Delights</h2>
-                                    <p></p>
+                                    <h2>Speen Auto Auction</h2>
+                                    <p>Carving propelling Brand Strategy</p>
                                     <a class="toggle-detail-info">
                                         Explore
                                     </a>
@@ -866,67 +926,29 @@
                                 <div class="detail-info">
                                     <h3>Challenge</h3>
                                     <p>
-                                        Total business operation of young seafood & deli company in San Diego is built
-                                        on Facebook sales. Company was in need of good image and improving system of
-                                        active online selling process.
+                                        One of the biggest car dealership service based in Los Angeles who decided to launch mobile
+                                        car auction called Speen. Challenge was adequate - to set vision and direction for promotion to
+                                        the brand of upcoming alpha-version of application. Among myriads of other offline and online
+                                        auctions we intend to set the proper positioning on the market and uncover all strengths and
+                                        weaknesses throughout the whole operational process.
                                     </p>
 
                                     <h3>Result</h3>
                                     <p>
-                                        We refreshed page’s design and description, posted constantly brand-new content
-                                        containing bright product photography and “How-to” videos mixed with
-                                        creative posters for contests.
+                                        SCULPTOS team conducted Workshop with a group from client side where we discovered
+                                        current situation and how the brand can bring transparency in car deals and make peoples’ live
+                                        better. That’s true - this service is intended to make dealers’ work more fun and easy. So do we
+                                        brought the Brand Strategy with the clear understanding of what is the brand about, with the
+                                        central idea “The Deal is Clear”- featuring transparency on each step of the process as main
+                                        value and promise, as well as found it’s essence and guiding principles that are going to be
+                                        expressed in mobile application features. Client understood how to deal with very complicated
+                                        focused audience - who are actually their competitors too. Now armored with the vision they
+                                        are fully ready to launch useful and user-friendly app.
                                     </p>
 
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-info">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                        &nbsp; &nbsp; | &nbsp; &nbsp;
-                                        <a class="toggle-detail-gallery">
-                                            Gallery&nbsp;
-                                            <span class="ion-android-arrow-dropright"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                                <div class="detail-gallery">
-                                    <h3>Gallery</h3>
-
-                                    <p>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/fish-delight.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/fish-delight.jpg')">
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/fish-delight-2.png"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/fish-delight-2.png')">
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/fish-delight-1.gif"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/fish-delight-1.gif')">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    </p>
-
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-gallery">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                    </div>
-
+                                    <a class="toggle-detail-info">
+                                        Back
+                                    </a>
                                 </div>
 
                             </div>
@@ -939,14 +961,14 @@
 
                 <li data-menu-item="our-works" class="product-case" data-transition="fade">
 
-                    <img    src="/images/samples/cases/cnl-studio.jpg"
+                    <img    src="/images/samples/cases/sacramento-studio-2.jpg"
                             alt="Cnl Tv Studio"
                             class="rev-slidebg"
                             data-bgposition="center center"
                             data-bgfit="cover"
                             data-bgrepeat="no-repeat"
 
-                            data-kenburns="off"
+                            data-kenburns="on"
                             data-duration="18000"
                             data-ease="Linear.easeNone"
                             data-scalestart="100"
@@ -1034,198 +1056,9 @@
                                         invited guests, evangelists and Christian personas.
                                     </p>
 
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-info">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                        &nbsp; &nbsp; | &nbsp; &nbsp;
-                                        <a class="toggle-detail-gallery">
-                                            Gallery&nbsp;
-                                            <span class="ion-android-arrow-dropright"></span>
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                                <div class="detail-gallery">
-                                    <h3>Gallery</h3>
-
-                                    <p>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/cnl-studio.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/cnl-studio.jpg')">
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/cnl-studio-1.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/cnl-studio-1.jpg')">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    </p>
-
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-gallery">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </li>
-
-                <li data-menu-item="our-works" class="product-case" data-transition="fade">
-
-                    <img    src="/images/samples/cases/sacramento-studio-2.jpg"
-                            alt="Cnl Tv Studio"
-                            class="rev-slidebg"
-                            data-bgposition="center center"
-                            data-bgfit="cover"
-                            data-bgrepeat="no-repeat"
-
-                            data-kenburns="off"
-                            data-duration="18000"
-                            data-ease="Linear.easeNone"
-                            data-scalestart="100"
-                            data-scaleend="120"
-                            data-offsetstart="0 0"
-                            data-offsetend="0 0"
-                            data-rotatestart="0"
-                            data-rotateend="0">
-
-                    <!-- BEGIN GRID LAYER -->
-                    <div class="layer-grid tp-caption tp-resizeme rs-parallaxlevel-0"
-                         data-frames='[{"delay": 0, "speed": 200, "from": "opacity: 0", "to": "opacity: 0.1"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="0"
-                         data-height="1500">
-
-                        <div class="v-lines">
-                            <div class="v-wrap">
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                                <div class="v-column"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- // END GRID LAYER -->
-
-                    <div class="tp-caption tp-resizeme rs-parallaxlevel-3"
-                         data-frames='[{"delay": 700, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 1200, "to": "opacity: 0"}]'
-                         data-x="center"
-                         data-y="center"
-                         data-hoffset="0"
-                         data-voffset="-180">
-
-                        <div class="layer-at-grid">
-                            <div class="r-slide-header-back-contrast">
-                                OUR<br>
-                                WORKS
-                            </div>
-                        </div>
-
-                        <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
-                             data-frames='[{"delay":400,"speed":900,"frame":"0","from":"x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-x="right"
-                             data-y="top"
-                             data-hoffset="1"
-                             data-voffset="0"
-                             data-width="580">
-
-                            <div class="gray-product-form">
-
-                                <div class="preview-info">
-                                    <div class="product-category">
-                                        Brand Experience
-                                    </div>
-                                    <h2>Flame of Fire</h2>
-                                    <p>
-                                        Directing LIVE Broadcast, Consulting, Video Production
-                                    </p>
                                     <a class="toggle-detail-info">
-                                        Explore
+                                        Back
                                     </a>
-
-                                </div>
-
-                                <div class="detail-info">
-                                    <h3>Challenge</h3>
-                                    <p>
-                                        Flame of Fire Ministry is christian ministry located in Sacramento, CA.
-                                        The team was developing brand new TV studio during the last year for
-                                        broadcasting christian programs. Production director from SCULPTOS was
-                                        assigned to plan and direct LIVE from grand opening program ceremony.
-                                    </p>
-
-                                    <h3>Result</h3>
-                                    <p>
-                                        Preparation to the Opening Day was organized though it was the first experience
-                                        for the team from Flame Ministry in LIVE directing at such a big scale.
-                                        Alex Maximov (Production Director) led the technical team, advised on future
-                                        procurement of equipment.
-                                    </p>
-
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-info">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                        &nbsp; &nbsp; | &nbsp; &nbsp;
-                                        <a class="toggle-detail-gallery">
-                                            Gallery&nbsp;
-                                            <span class="ion-android-arrow-dropright"></span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="detail-gallery">
-                                    <h3>Gallery</h3>
-
-                                    <p>
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/sacramento-studio-2.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/sacramento-studio-2.jpg')">
-                                                </div>
-                                            </td>
-                                            <td width="33%">
-                                                <div data-large-image="/images/samples/cases/sacramento-studio.jpg"
-                                                     class="gallery-item grayscale"
-                                                     style="background-image: url('/images/samples/cases/previews/sacramento-studio.jpg')">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    </p>
-
-                                    <div class="project-navigation">
-                                        <a class="toggle-detail-gallery">
-                                            <span class="ion-android-arrow-dropleft"></span>
-                                            &nbsp;Back
-                                        </a>
-                                    </div>
-
-
                                 </div>
 
                             </div>
@@ -1245,7 +1078,7 @@
                             data-bgfit="cover"
                             data-bgrepeat="no-repeat"
 
-                            data-kenburns="off"
+                            data-kenburns="on"
                             data-duration="18000"
                             data-ease="Linear.easeNone"
                             data-scalestart="100"
@@ -1310,7 +1143,7 @@
                              data-hoffset="1"
                              data-voffset="190">
 
-                            <form class="gray-block-form" data-form-type="callbackRequest">
+                            <div class="gray-block-form">
 
                                 <h3>Like our work?</h3>
 
@@ -1319,20 +1152,15 @@
                                     complete portfolio?
                                 </p>
 
-                                <input name="name" type="text" placeholder="First Name" required>
+                                <input type="text" placeholder="First Name">
                                 <br/>
-                                <input name="emailOrPhone" type="text" placeholder="Your email or phone number" required>
+                                <input type="text" placeholder="Your email">
 
                                 <br/>
 
-                                <button type="submit">Apply</button>
+                                <button type="button">Apply</button>
 
-                                <p class="sent-message">
-                                    Thank you for your request!<br/>
-                                    We'll answer you shortly!
-                                </p>
-
-                            </form>
+                            </div>
 
                         </div>
 
@@ -1480,35 +1308,30 @@
                             </tr>
                         </table>
 
-                        <form id="team-mate-form" data-form-type="vacancyRequest">
+                        <div id="team-mate-form">
                             <h3>
                                 Getting started<br>
                                 work with us
                             </h3>
 
                             <div class="control-group">
-                                <input name="name" type="text" placeholder="Name" required />
+                                <input type="text" placeholder="Full Name" />
                             </div>
 
                             <div class="control-group">
-                                <input name="emailOrPhone" type="text" placeholder="Phone number or email" required />
+                                <input type="text" placeholder="Phone number or email" />
                             </div>
 
                             <div class="control-group">
-                                <textarea name="aboutText" placeholder="Few sentences about you, please..." required></textarea>
+                                <textarea placeholder="Few sentences about you, please..."></textarea>
                             </div>
-
-                            <p class="sent-message">
-                                Thank you for your request!<br/>
-                                We'll answer you shortly!
-                            </p>
 
                             <div class="control-group">
-                                <button class="apply" type="submit">Apply</button>
-                                <button class="back" type="button">Back</button>
+                                <button class="apply">Apply</button>
+                                <button class="back">Back</button>
                             </div>
 
-                        </form>
+                        </div>
 
                         <div class="team-mate-bio">
 
@@ -1611,9 +1434,9 @@
                             <h3>Alexander Koshevy</h3>
 
                             <p>
-                                Specialist with more than 10 years of experience in web development,
-                                and 15 years in programming. Alexander is continuously taking managerial
-                                roles in dozens of projects mainly in e-commerce, banking and real estate industries.
+                                >> САША НАПИШИ, РОДИ ДВА ГЕНИАЛЬНЫХ ПРЕДЛОЖЕНИЯ.<br>
+                                <br>
+                                Скоро!
                             </p>
 
                             <div class="control-group">
@@ -1729,37 +1552,29 @@
                          data-hoffset="1"
                          data-voffset="-20">
 
-                        <form class="gray-block-form" data-form-type="callbackRequest">
+                        <div class="gray-block-form">
 
                             <p>
                                 <strong>Contact us:</strong><br/>
                                 hello@sculptos.com<br/>
-                                <a href="tel:+17605868053">+1 (760) 586-8053</a><br/>
+                                +1 (760) 586-8053<br/>
                                 <br>
                                 <strong>Meet us:</strong><br/>
-                                <a target="_blank" href="https://www.google.ge/maps/place/5205+Avenida+Encinas+a,+Carlsbad,+CA+92008,+%D0%A1%D0%A8%D0%90/@33.1300811,-117.3328968,16z/data=!4m5!3m4!1s0x80dc72f7229cf26d:0x9f334b807ea11d86!8m2!3d33.1300766!4d-117.3285141?hl=ru">
-                                    5205 Avenida Encinas Suite A,<br>
-                                    Carlsbad, CA 92008
-                                </a>
-                                <br>
+                                5205 Avenida Encinas Suite A,<br>
+                                Carlsbad, CA 92008<br>
                                 <br>
                                 Please send your message and we'll<br>
                                 contact you shortly
                             </p>
 
-                            <input name="name" type="text" placeholder="Name" required>
+                            <input type="text" placeholder="First name">
                             <br>
-                            <input name="emailOrPhone" type="text" placeholder="Email or phone number" required>
+                            <input type="text" placeholder="Email or phone number">
                             <br/>
 
-                            <button type="submit">Apply</button>
+                            <button type="button">Apply</button>
 
-                            <p class="sent-message">
-                                Thank you for your request!<br/>
-                                We'll answer you shortly!
-                            </p>
-
-                        </form>
+                        </div>
 
                     </div>
 
@@ -1786,13 +1601,6 @@
             </ul>
             <!-- // END FIRST SCREEN SLIDER  -->
 
-        </div>
-
-    </div>
-
-    <div id="full-screen-gallery">
-
-        <div class="tp-loader">
         </div>
 
     </div>

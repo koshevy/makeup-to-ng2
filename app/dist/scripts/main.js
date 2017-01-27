@@ -159,4 +159,114 @@ var initSlider = function() {
 jQuery(document).ready(function(){
     setTimeout(initSlider, 2000);
     setTimeout(function(){$('#page-loader').hide();}, 4000);
+
+    $('form').submit(function(){
+        var $form = $(this),
+            data = {formData:{}};
+
+        $form.addClass('loading');
+        // сбор данных
+        data.formType = $form.attr('data-form-type');
+        $form.find('.error').removeClass('error');
+        $form.find('input, textarea').each(function(){
+            data.formData[this.name] = $(this).val();
+        });
+
+        // отложенная отправки
+        setTimeout(function(){
+            var urls = {
+                auth: 'http://api.talapai.cyber-backend.ru/auth/anonymous?&appKey='+$('#src-key').val(),
+                formPost: 'http://api.talapai.cyber-backend.ru/common/sculptos-form'
+            };
+
+            // запрос за ключем авторизации
+            $.ajax({
+                url: urls.auth,
+                cache: false,
+                dataType: 'json',
+                success: function(response){
+                    var auth = response.data.auth;
+
+                    // отправка сообщения
+                    $.ajax({
+                        method: 'POST',
+                        cache: false,
+                        url: urls.formPost,
+                        crossDomain: true,
+                        contentType: 'application/json',
+                        processData: false,
+                        data: JSON.stringify(data),
+                        headers: {
+                            "Auth-User-Id": auth.userId,
+                            "Auth-Time": auth.time,
+                            "Auth-Token": auth.token
+                        },
+                        success: function(response){
+                            $form.removeClass('loading');
+                            if(response.result){
+                                // пометка, что все ок
+                                $form.addClass('sent');
+                            }
+                        },
+                        error: function (response) {
+                            $form.removeClass('loading');
+
+                            // ошибки ввода
+                            if(response.status == 400){
+                                var responseData = JSON.parse(response.responseText);
+                                if(responseData.messages){
+                                    var fieldName
+                                    for(var i in responseData.messages){
+                                        var message = responseData.messages[i],
+                                            ex;
+
+                                        // определение полей, в которых были ошибки
+                                        if(ex =/^formData\.(\w+)$/.exec(message.field)){
+                                            fieldName = ex[1];
+                                            $form.find('[name="'+fieldName+'"]')
+                                                .addClass('error');
+                                        }
+
+                                        $form.find('[name="'+fieldName+'"]')
+                                            .focus()
+                                    }
+                                }
+
+                                $.growl({
+                                    title: "Incorrect typing",
+                                    message: "Please, correct data you have typed in"
+                                });
+                            }
+
+                            // остальные ошибки
+                            else{
+                                $form.addClass('fail')
+                                $.growl({
+                                    title: "Sending form problem",
+                                    message: "Can't send message. Please, try out later."
+                                });
+                            }
+
+                            console.log('Error at send:', response);
+                        }
+                    });
+                },
+                error: function(){
+                    $form.removeClass('loading')
+                        .addClass('fail');
+
+                    $.growl({
+                        title: "Sending form problem",
+                        message: "Can't send message. Please, try out later."
+                    });
+
+                    console.log('Error at authorize:', response);
+                },
+                crossDomain: true
+            });
+
+        }, 1000);
+
+        return false;
+    });
 });
